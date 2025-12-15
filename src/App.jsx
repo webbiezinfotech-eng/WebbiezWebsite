@@ -1,59 +1,64 @@
 import React, { useState } from 'react'
 import { FaLinkedin, FaWhatsapp, FaEnvelope, FaInstagram, FaSearch, FaDesktop, FaCircle, FaCode, FaChartLine, FaBullseye, FaShoppingCart, FaUsers, FaPalette, FaMobile, FaChevronLeft, FaChevronRight, FaPhone, FaMapMarkerAlt } from 'react-icons/fa'
+import uiuxImage from './assets/images/WhatsApp Image 2025-12-15 at 3.12.41 PM.jpeg'
+import financialImage from './assets/images/Screenshot 2025-12-15 at 16.07.58.png'
+import jobImage from './assets/images/Screenshot 2025-12-15 at 16.09.44.png'
+import wholesaleImage from './assets/images/Screenshot 2025-12-15 at 16.10.47.png'
+import faqImage from './assets/images/Untitled design (42) 1.png'
+import heroImage from './assets/images/Group 1321316220.png'
+import webDevImage from './assets/images/Rectangle 34625783.png'
+import uiuxServiceImage from './assets/images/Rectangle 34625783-1.png'
+import seoImage from './assets/images/Rectangle 34625783-2.png'
+import brandingImage from './assets/images/Rectangle 34625783-3.png'
+import ecommerceImage from './assets/images/Rectangle 34625783-4.png'
+import prImage from './assets/images/Rectangle 34625783-5.png'
 
 const App = () => {
   return (
     <div className="min-h-screen bg-white text-white">
       {/* Hero Section */}
-      <section className="relative flex items-center justify-center px-4 sm:px-8 py-10 sm:py-20">
-        {/* Main Content Block */}
-        <div className="relative w-full max-w-7xl min-h-screen ">
-          {/* Main Teal Block */}
-          <div className="bg-[#1E8975] rounded-2xl sm:rounded-3xl p-8 sm:p-12 lg:p-20 relative border-2 border-white">
-            {/* Company Name */}
-            <div className="text-center">
-              <h1 className="text-4xl sm:text-6xl lg:text-8xl xl:text-9xl font-bold text-white leading-none">
-                WEBBIEZ
-              </h1>
-              <h2 className="text-4xl sm:text-6xl lg:text-8xl xl:text-9xl font-bold text-white leading-none">
-                INFOTECH
-              </h2>
-            </div>
-
-            {/* Left Social Media Bar - Hidden on mobile */}
-            <div className="hidden lg:block absolute -left-[70px] top-1/3 transform -translate-y-1/2 z-20 ">
-              <div className="bg-[#07191B] rounded-full p-3 md:py-6 space-y-4 ">
-                <FaLinkedin className="text-xl md:text-2xl lg:text-3xl text-white transition cursor-pointer  " />
-                <FaWhatsapp className="text-xl md:text-2xl lg:text-3xl text-white transition cursor-pointer  " />
-                <FaEnvelope className="text-xl md:text-2xl lg:text-3xl text-white transition cursor-pointer  " />
-                <FaInstagram className="text-xl md:text-2xl lg:text-3xl text-white transition cursor-pointer  " />
-                <div className="w-8 h-8 bg-[#1E8975] rounded-full flex items-center justify-center">
-                  <span className="text-white text-lg md:text-xl ">W</span>
-                </div>
+      <section className="h-screen w-full bg-white overflow-hidden flex">
+        <div className="h-full w-full flex">
+          {/* Left Vertical Bar - Black background with social icons */}
+          <div className="w-16 lg:w-20 flex-shrink-0 bg-[#07191B] flex flex-col items-center justify-center space-y-5 p-4">
+            <FaLinkedin className="text-2xl lg:text-3xl text-white transition cursor-pointer hover:opacity-80" />
+            <FaWhatsapp className="text-2xl lg:text-3xl text-white transition cursor-pointer hover:opacity-80" />
+            <FaEnvelope className="text-2xl lg:text-3xl text-white transition cursor-pointer hover:opacity-80" />
+            <FaInstagram className="text-2xl lg:text-3xl text-white transition cursor-pointer hover:opacity-80" />
+            <div className="w-10 h-10 bg-white rounded-full flex items-center justify-center mt-2">
+              <span className="text-[#07191B] text-lg lg:text-xl font-bold">W</span>
               </div>
             </div>
 
-            {/* Top Right Elements - Responsive */}
-            <div className="absolute -top-2 -right-2 sm:-top-3 sm:-right-3 z-20 flex gap-2 sm:gap-3">
-              {/* Search Bar - Hidden on small screens */}
-              <div className="hidden sm:flex bg-[#07191B] rounded-full px-3 sm:px-4 py-2 items-center gap-2">
-                <FaSearch className="text-white text-sm" />
-                <span className="text-white text-sm">Search</span>
+          {/* Left Green Vertical Element */}
+          <div className="w-4 lg:w-6 flex-shrink-0 bg-[#208975]"></div>
+
+          {/* Main Image - Direct image display */}
+          <div className="flex-1 relative overflow-hidden flex items-center justify-center">
+            <img 
+              src={heroImage} 
+              alt="Webbiez Infotech Hero" 
+              className="w-[80%] h-[80%] object-contain"
+            />
+
+            {/* Top Right - Search Bar - On image */}
+            <div className="absolute top-4 right-4 sm:top-6 sm:right-6 z-40 flex gap-3">
+              <div className="bg-white border-2 border-[#07191B] rounded-full px-4 sm:px-5 py-2 flex items-center gap-2">
+                <FaSearch className="text-[#07191B] text-sm" />
+                <span className="text-[#07191B] text-sm font-medium">Search</span>
               </div>
-              
-              {/* Logo */}
-              <div className="w-8 h-8 sm:w-10 sm:h-10 bg-[#07191B] rounded-full flex items-center justify-center">
-                <span className="text-white font-bold text-xs sm:text-sm">W</span>
+              <div className="w-10 h-10 sm:w-12 sm:h-12 bg-white border-2 border-[#07191B] rounded-full flex items-center justify-center">
+                <span className="text-[#07191B] font-bold text-sm sm:text-base">W</span>
               </div>
             </div>
 
-            {/* Bottom Right Description Box - Responsive */}
-            <div className="absolute -bottom-2 -right-2 sm:-bottom-4 sm:-right-4 z-20">
-              <div className="bg-[#07191B] rounded-xl sm:rounded-2xl p-3 sm:p-5 max-w-xs">
-                <h3 className="text-sm sm:text-lg font-bold text-white underline mb-2">
+            {/* Bottom Right - Innovation Box - On image */}
+            <div className="absolute bottom-4 right-4 sm:bottom-6 sm:right-6 lg:bottom-8 lg:right-8 z-40">
+              <div className="bg-[#07191B] rounded-xl sm:rounded-2xl lg:rounded-3xl p-4 sm:p-5 lg:p-6 max-w-xs sm:max-w-sm border border-white">
+                <h3 className="text-sm sm:text-base lg:text-lg font-bold text-white underline mb-2 sm:mb-3 font-serif">
                   Innovating the Innovation
                 </h3>
-                <p className="text-gray-200 text-xs leading-relaxed">
+                <p className="text-white text-xs sm:text-sm leading-relaxed font-serif">
                   At Webbiez Infotech, we don't just create technology—we create experiences. From powerful websites to stunning apps, our mission is to turn bold ideas into digital reality.
                 </p>
               </div>
@@ -61,11 +66,10 @@ const App = () => {
           </div>
         </div>
       </section>
-
       {/* About Us Section */}
       <section className="py-10 sm:py-20 px-4 sm:px-8 bg-[#07191B]">
-        {/* Top and Bottom Lines */}
-        <div className="w-full h-px bg-white mb-8 sm:mb-16"></div>
+        {/* Top Line - 60% width from left to right */}
+        <div className="w-[60%] h-2 sm:h-3 lg:h-4 bg-white rounded-full mb-8 sm:mb-16"></div>
         
         <div className="max-w-7xl mx-auto">
           {/* Section Title */}
@@ -122,24 +126,25 @@ const App = () => {
           </div>
         </div>
         
-        {/* Bottom Line */}
-        <div className="w-full h-px bg-white mt-8 sm:mt-16"></div>
+        {/* Bottom Line - 60% width from right to left */}
+        <div className="w-[60%] h-2 sm:h-3 lg:h-4 bg-white rounded-full mt-8 sm:mt-16 ml-auto"></div>
       </section>
 
       {/* Services Section */}
-      <section className="py-10 sm:py-20 px-4 sm:px-8 bg-[#1E8975]">
-        <div className="max-w-7xl mx-auto">
-          <h2 className="text-3xl sm:text-4xl lg:text-6xl font-bold text-white text-center mb-8 sm:mb-16">Services We Offer</h2>
+      <section className="pt-8 sm:pt-12 lg:pt-16 pb-16 sm:pb-24 lg:pb-32 xl:pb-40 px-4 sm:px-8 bg-[#208975] min-h-screen flex items-start">
+        <div className="max-w-7xl mx-auto w-full">
+          <h2 className="text-3xl sm:text-4xl lg:text-6xl font-bold text-white text-left mb-8 sm:mb-12 lg:mb-16">Services We Offer</h2>
           
           {/* Services Cards Container */}
-          <div className="flex flex-col lg:flex-row gap-4 items-center lg:items-end justify-center lg:gap-20">
+          <div className="flex flex-col lg:flex-row gap-8 sm:gap-10 lg:gap-14 xl:gap-18 2xl:gap-24 items-center lg:items-end justify-center">
             {/* Web Development */}
             <ServiceCard 
               title="Web Development"
               description="Scalable, fast, and modern websites built with cutting-edge technologies."
               icon={<FaCode />}
               isExpanded={false}
-              backgroundImage="bg-gradient-to-br from-[#07191B] to-[#07191B]"
+              backgroundImage="bg-[#07191B]"
+              backgroundImageSrc={webDevImage}
             />
             
             {/* UI/UX Designing */}
@@ -148,7 +153,8 @@ const App = () => {
               description="Beautiful, intuitive user interfaces and experiences that users love."
               icon={<FaPalette />}
               isExpanded={false}
-              backgroundImage="bg-gradient-to-br from-[#07191B] to-[#07191B]"
+              backgroundImage="bg-[#07191B]"
+              backgroundImageSrc={uiuxServiceImage}
             />
             
             {/* SEO & Digital Marketing */}
@@ -157,7 +163,8 @@ const App = () => {
               description="Boost your online presence with strategic SEO and digital marketing solutions."
               icon={<FaChartLine />}
               isExpanded={false}
-              backgroundImage="bg-gradient-to-br from-purple-800 to-purple-900"
+              backgroundImage="bg-purple-900"
+              backgroundImageSrc={seoImage}
             />
             
             {/* Branding & Creativity */}
@@ -166,7 +173,8 @@ const App = () => {
               description="Create memorable brand identities that stand out in the market."
               icon={<FaBullseye />}
               isExpanded={false}
-              backgroundImage="bg-gradient-to-br from-gray-300 to-gray-400"
+              backgroundImage="bg-gray-400"
+              backgroundImageSrc={brandingImage}
             />
             
             {/* E-Commerce & Business Portals */}
@@ -175,7 +183,8 @@ const App = () => {
               description="Powerful online stores and business portals that drive sales and growth."
               icon={<FaShoppingCart />}
               isExpanded={false}
-              backgroundImage="bg-gradient-to-br from-[#07191B] to-[#07191B]"
+              backgroundImage="bg-[#07191B]"
+              backgroundImageSrc={ecommerceImage}
             />
             
             {/* PR (Public Relations) */}
@@ -184,19 +193,20 @@ const App = () => {
               description="Strategic communication and public relations to build your brand reputation."
               icon={<FaUsers />}
               isExpanded={false}
-              backgroundImage="bg-gradient-to-br from-[#07191B] to-purple-900"
+              backgroundImage="bg-purple-900"
+              backgroundImageSrc={prImage}
             />
           </div>
         </div>
       </section>
 
       {/* Projects Section */}
-      <section className="py-10 sm:py-20 px-4 sm:px-8 bg-white">
-        <div className="max-w-7xl mx-auto">
+      <section className="-mt-16 sm:-mt-20 lg:-mt-24 xl:-mt-28 2xl:-mt-32 pt-12 sm:pt-16 lg:pt-20 xl:pt-24 pb-10 sm:pb-20 px-4 sm:px-8 bg-white rounded-t-[5rem] sm:rounded-t-[6rem] md:rounded-t-[7rem] lg:rounded-t-[8rem] xl:rounded-t-[10rem] 2xl:rounded-t-[12rem] rounded-b-[5rem] sm:rounded-b-[6rem] md:rounded-b-[7rem] lg:rounded-b-[8rem] xl:rounded-b-[10rem] 2xl:rounded-b-[12rem] relative z-10 mb-0">
+        <div className="max-w-[98%] sm:max-w-[95%] lg:max-w-[92%] xl:max-w-[90%] 2xl:max-w-[88%] mx-auto w-full">
           {/* Section Title and Description */}
-          <div className="text-center mb-8 sm:mb-16">
+          <div className="text-center mb-10 sm:mb-16 lg:mb-20">
             <h2 className="text-3xl sm:text-4xl lg:text-6xl font-bold text-[#07191B] mb-4 sm:mb-6">
-              Projects We've <span className="text-teal-500">Worked on</span>
+              Projects We've <span className="text-[#208975]">Worked on</span>
             </h2>
             <p className="text-base sm:text-lg text-[#07191B] max-w-4xl mx-auto leading-relaxed">
               We've worked on diverse projects ranging from responsive websites to complex business portals. Our solutions integrate ReactJS, PHP, Node.js, Flutter, Figma, and modern UI tools to ensure scalability, design precision, and high performance.
@@ -224,7 +234,7 @@ const App = () => {
 }
 
 // Service Card Component
-function ServiceCard({ title, description, icon, isExpanded, backgroundImage }) {
+function ServiceCard({ title, description, icon, isExpanded, backgroundImage, backgroundImageSrc }) {
   const [isHovered, setIsHovered] = useState(false);
   
   // Determine text color based on background
@@ -233,28 +243,34 @@ function ServiceCard({ title, description, icon, isExpanded, backgroundImage }) 
   
   return (
     <div 
-      className={`relative transition-all duration-500 ease-in-out cursor-pointer ${
+      className={`relative transition-all duration-500 ease-in-out cursor-pointer overflow-hidden rounded-[60px] sm:rounded-[70px] lg:rounded-[80px] xl:rounded-[90px] ${
         isExpanded || isHovered 
-          ? 'w-full sm:w-80 lg:w-96 h-64' 
-          : 'w-16 h-64 sm:h-80'
+          ? 'w-full sm:w-[28rem] lg:w-[36rem] xl:w-[40rem] h-96 sm:h-[28rem] lg:h-[32rem]' 
+          : 'w-28 sm:w-32 lg:w-36 h-80 sm:h-[450px] lg:h-[500px]'
       }`}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
-      <div className={`${backgroundImage} rounded-2xl h-full border-2 border-white relative overflow-hidden`}>
-        {/* Background Pattern/Image Effect */}
-        <div className="absolute inset-0 opacity-20">
-          <div className="w-full h-full bg-gradient-to-br from-white/10 to-transparent"></div>
+      <div className={`${backgroundImage} rounded-[60px] sm:rounded-[70px] lg:rounded-[80px] xl:rounded-[90px] h-full border-2 border-white relative overflow-hidden`}>
+        {/* Background Image */}
+        {backgroundImageSrc && (
+          <div className="absolute inset-0 z-0">
+            <img 
+              src={backgroundImageSrc} 
+              alt={title}
+              className="w-full h-full object-cover"
+            />
         </div>
+        )}
         
         {/* Content */}
-        <div className="relative z-10 h-full flex flex-col justify-between p-4 sm:p-6">
+        <div className="relative z-10 h-full flex flex-col justify-between p-6 sm:p-8 lg:p-10">
           {isExpanded || isHovered ? (
             // Expanded State
-            <div className={textColor}>
-              <div className="text-3xl sm:text-4xl mb-4">{icon}</div>
-              <h3 className="text-2xl sm:text-3xl font-bold mb-4">{title}</h3>
-              <p className="text-base sm:text-lg leading-relaxed">{description}</p>
+            <div className={`${textColor} flex flex-col justify-center space-y-6 sm:space-y-8`}>
+              <div className="text-4xl sm:text-5xl lg:text-6xl">{icon}</div>
+              <h3 className="text-3xl sm:text-4xl lg:text-5xl font-bold">{title}</h3>
+              <p className="text-lg sm:text-xl lg:text-2xl leading-relaxed">{description}</p>
             </div>
           ) : (
             // Collapsed State
@@ -277,27 +293,31 @@ function ProjectsSlider() {
   const projects = [
     {
       id: 0,
-      title: "UI/UX Designer Portfolio",
-      description: "2+ Years of Excellence in Web Development, UI/UX Design",
-      type: "portfolio"
+      title: "Wholesale Partner Platform",
+      description: "A comprehensive e-commerce platform for wholesale stationery supplies. This full-featured website includes a complete admin panel for inventory management, order processing, and customer management. Built with modern web technologies to provide seamless shopping experience with bulk ordering capabilities.",
+      type: "wholesale",
+      url: "https://shreeram.webbiezinfotech.in/"
     },
     {
       id: 1,
-      title: "Financial Freedom Platform",
-      description: "Unlock financial freedom with India's Best Mutual Fund Distributor",
-      type: "financial"
+      title: "UI/UX Designer Portfolio",
+      description: "A professional portfolio website showcasing extensive work in web development and UI/UX design. The site beautifully presents all completed projects with detailed explanations of each project's scope, challenges, and solutions. Includes comprehensive backend integration for dynamic content management and project showcase.",
+      type: "portfolio",
+      url: ""
     },
     {
       id: 2,
-      title: "Job Portal Platform", 
-      description: "The Easiest Way To Get Your New Job",
-      type: "job"
+      title: "Financial Freedom Platform",
+      description: "A comprehensive mutual fund platform designed to provide complete financial information and investment solutions. The website features extensive use of animations, smooth transitions, and engaging graphics to make complex financial data accessible and visually appealing. Built to deliver an exceptional user experience with interactive elements.",
+      type: "financial",
+      url: "https://swarajfinpro.com/"
     },
     {
       id: 3,
-      title: "Wholesale Partner Platform",
-      description: "Your Trusted Wholesale Partner",
-      type: "wholesale"
+      title: "Job Portal Platform", 
+      description: "A large-scale job portal platform connecting job seekers with employers. This comprehensive platform includes a feature-rich web application and a mobile app built with Flutter for seamless access across devices. Designed to handle high traffic and provide efficient job matching capabilities.",
+      type: "job",
+      url: "https://beige-jaguar-560051.hostingersite.com/"
     }
   ];
 
@@ -306,119 +326,120 @@ function ProjectsSlider() {
       {/* Main Project Display */}
       <div className="flex flex-col lg:flex-row gap-8">
           {/* Project Details Card */}
-          <div className="w-full lg:w-80 bg-white rounded-lg border border-gray-200 p-4 sm:p-6 shadow-lg">
-            <h3 className="text-xl sm:text-2xl font-bold text-teal-500 mb-4">
+          <div className="w-full lg:w-1/2 bg-white rounded-2xl sm:rounded-3xl border border-gray-200 p-6 sm:p-8 shadow-lg max-h-[500px] sm:max-h-[600px] overflow-y-auto">
+            <h3 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-[#208975] mb-5">
               {projects[selectedProject].title}
             </h3>
-            <p className="text-[#07191B] mb-6 leading-relaxed text-sm sm:text-base">
+            <p className="text-[#07191B] mb-6 leading-relaxed text-lg sm:text-xl">
               {projects[selectedProject].description}
             </p>
-            <div className="mb-6">
-              <h4 className="text-base sm:text-lg font-bold text-teal-500 mb-2">Technologies Used:-</h4>
-              <p className="text-[#07191B] text-sm sm:text-base">
-                {projects[selectedProject].type === 'portfolio' && "React.js, Tailwind CSS & Node.js"}
-                {projects[selectedProject].type === 'financial' && "React.js, Node.js & MongoDB"}
-                {projects[selectedProject].type === 'job' && "PHP, MySQL & Bootstrap"}
-                {projects[selectedProject].type === 'wholesale' && "Flutter, Firebase & Payment Gateway"}
+            <div className="mb-7">
+              <h4 className="text-lg sm:text-xl font-bold text-[#208975] mb-3">Technologies Used:-</h4>
+              <p className="text-[#07191B] text-lg sm:text-xl">
+                {projects[selectedProject].type === 'wholesale' && "React.js, PHP, Admin Panel & Backend Integration"}
+                {projects[selectedProject].type === 'portfolio' && "Next.js, PHP, Backend & Full Stack Development"}
+                {projects[selectedProject].type === 'financial' && "React.js, PHP, Animations & Graphics"}
+                {projects[selectedProject].type === 'job' && "React.js, PHP, Flutter Mobile App & Full Platform"}
               </p>
             </div>
-            <button className="w-full border-2 border-teal-500 text-teal-500 py-3 px-6 rounded-lg font-semibold hover:bg-teal-500 hover:text-white transition duration-300 text-sm sm:text-base">
+            <button 
+              onClick={() => {
+                if (projects[selectedProject].url) {
+                  window.open(projects[selectedProject].url, '_blank');
+                }
+              }}
+              className="border-2 border-[#208975] text-[#208975] py-3 px-8 rounded-lg text-lg font-semibold hover:bg-[#208975] hover:text-white transition duration-300"
+            >
               Visit Site
             </button>
           </div>
 
-          {/* Project Preview */}
-          <div className="flex-1">
-            <div className="bg-white rounded-2xl border-2 border-gray-200 shadow-lg">
-              <div className="h-64 sm:h-96 bg-gradient-to-br from-[#07191B] via-teal-900 to-[#07191B] relative">
-                {/* Project Preview Content */}
-                <div className="p-4 sm:p-8 h-full flex flex-col justify-between">
-                  {/* Navbar */}
-                  <div className="flex flex-col sm:flex-row justify-between items-center gap-4">
-                    <div className="text-lg sm:text-2xl font-bold text-white">Aarti Nathani</div>
-                    <div className="hidden sm:flex gap-4 lg:gap-8 items-center">
-                      <a href="#" className="text-teal-400 hover:text-teal-300 text-sm">Home</a>
-                      <a href="#" className="text-gray-300 hover:text-white text-sm">About</a>
-                      <a href="#" className="text-gray-300 hover:text-white text-sm">Services</a>
-                      <a href="#" className="text-gray-300 hover:text-white text-sm">Projects</a>
-                      <a href="#" className="text-gray-300 hover:text-white text-sm">Testimonials</a>
-                      <a href="#" className="text-gray-300 hover:text-white text-sm">Contact</a>
-                      <button className="bg-teal-500 hover:bg-teal-600 px-4 sm:px-6 py-2 rounded-full transition text-sm">
-                        HIRE ME
-                      </button>
+          {/* Project Preview - Image */}
+          <div className="w-full lg:w-1/2">
+            <div className="bg-white rounded-2xl sm:rounded-3xl lg:rounded-[2rem] border-2 border-gray-200 shadow-lg overflow-hidden max-h-[500px] sm:max-h-[600px]">
+              {projects[selectedProject].type === 'portfolio' ? (
+                <img 
+                  src={uiuxImage} 
+                  alt={projects[selectedProject].title}
+                  className="w-full h-full max-h-[500px] sm:max-h-[600px] object-cover rounded-2xl sm:rounded-3xl lg:rounded-[2rem]"
+                />
+              ) : projects[selectedProject].type === 'financial' ? (
+                <img 
+                  src={financialImage} 
+                  alt={projects[selectedProject].title}
+                  className="w-full h-full max-h-[500px] sm:max-h-[600px] object-cover rounded-2xl sm:rounded-3xl lg:rounded-[2rem]"
+                />
+              ) : projects[selectedProject].type === 'job' ? (
+                <img 
+                  src={jobImage} 
+                  alt={projects[selectedProject].title}
+                  className="w-full h-full max-h-[500px] sm:max-h-[600px] object-cover rounded-2xl sm:rounded-3xl lg:rounded-[2rem]"
+                />
+              ) : projects[selectedProject].type === 'wholesale' ? (
+                <img 
+                  src={wholesaleImage} 
+                  alt={projects[selectedProject].title}
+                  className="w-full h-full max-h-[500px] sm:max-h-[600px] object-cover rounded-2xl sm:rounded-3xl lg:rounded-[2rem]"
+                />
+              ) : (
+                <div className="h-64 sm:h-96 bg-gradient-to-br from-[#07191B] via-teal-900 to-[#07191B] relative rounded-2xl sm:rounded-3xl lg:rounded-[2rem] flex items-center justify-center">
+                  <p className="text-white text-lg sm:text-xl">Image coming soon</p>
                     </div>
+              )}
                   </div>
-
-                  {/* Hero Content */}
-                  <div className="text-center">
-                    <h1 className="text-4xl sm:text-6xl lg:text-8xl font-bold text-white mb-4">
-                      UI <span className="inline-block mx-4 sm:mx-8"></span> UX
-                    </h1>
-                    <h2 className="text-3xl sm:text-4xl lg:text-6xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-teal-400 to-teal-600 mb-4 sm:mb-8"
-                        style={{ WebkitTextStroke: '2px #14b8a6' }}>
-                      DESIGNER
-                    </h2>
-                  </div>
-
-                  {/* Bottom Content */}
-                  <div className="flex flex-col sm:flex-row justify-between items-center gap-4">
-                    <button className="bg-teal-500 hover:bg-teal-600 px-6 sm:px-8 py-3 rounded-full font-semibold transition text-sm">
-                      Get A Free Call
-                    </button>
-                    <p className="text-gray-300 text-xs sm:text-sm text-center">
-                      {projects[selectedProject].description}
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
           </div>
         </div>
 
       {/* Project Thumbnails Slider - Below main display */}
       <div className="mt-8">
-        <div className="flex flex-wrap gap-4 justify-center">
+        <div className="flex flex-wrap gap-6 sm:gap-8 lg:gap-10 xl:gap-12 justify-center items-center w-full">
           {projects.map((project, index) => (
             <div
               key={project.id}
-              className={`cursor-pointer transition-all duration-300 ${
+              className={`cursor-pointer transition-all duration-300 rounded-2xl sm:rounded-3xl overflow-hidden relative group ${
                 selectedProject === index 
-                  ? 'transform scale-105 border-4 border-teal-500' 
-                  : 'border-2 border-gray-300 hover:border-teal-400'
+                  ? 'transform scale-110 border-4 border-[#208975] shadow-xl shadow-[#208975]/50' 
+                  : 'border-2 border-gray-300 hover:border-[#208975] hover:scale-105 hover:shadow-lg hover:shadow-[#208975]/30'
               }`}
               onClick={() => setSelectedProject(index)}
             >
-              <div className="w-40 sm:w-48 h-24 sm:h-32 bg-white rounded-lg shadow-md">
-                {project.type === 'portfolio' ? (
-                  <div className="h-full bg-gradient-to-br from-[#07191B] via-teal-900 to-[#07191B] flex items-center justify-center">
-                    <div className="text-center">
-                      <h3 className="text-lg sm:text-2xl font-bold text-white mb-2">UI UX</h3>
-                      <p className="text-teal-400 text-xs sm:text-sm">DESIGNER</p>
-                    </div>
-                  </div>
+              <div className="w-40 sm:w-48 h-24 sm:h-32 bg-white rounded-2xl sm:rounded-3xl shadow-md overflow-hidden relative">
+                {/* Hover Overlay */}
+                {selectedProject !== index && (
+                  <div className="absolute inset-0 bg-[#208975]/0 group-hover:bg-[#208975]/10 transition-all duration-300 rounded-2xl sm:rounded-3xl z-10"></div>
+                )}
+                {project.type === 'wholesale' ? (
+                  <img 
+                    src={wholesaleImage} 
+                    alt={project.title}
+                    className="w-full h-full object-cover rounded-2xl sm:rounded-3xl"
+                  />
+                ) : project.type === 'portfolio' ? (
+                  <img 
+                    src={uiuxImage} 
+                    alt={project.title}
+                    className="w-full h-full object-cover rounded-2xl sm:rounded-3xl"
+                  />
                 ) : project.type === 'financial' ? (
-                  <div className="h-full bg-gradient-to-br from-blue-600 to-blue-800 flex items-center justify-center">
-                    <div className="text-center text-white">
-                      <h3 className="text-sm sm:text-lg font-bold mb-2">Financial</h3>
-                      <p className="text-xs">Mutual Fund Platform</p>
-                    </div>
-                  </div>
+                  <img 
+                    src={financialImage} 
+                    alt={project.title}
+                    className="w-full h-full object-cover rounded-2xl sm:rounded-3xl"
+                  />
                 ) : project.type === 'job' ? (
-                  <div className="h-full bg-gradient-to-br from-green-600 to-green-800 flex items-center justify-center">
-                    <div className="text-center text-white">
-                      <h3 className="text-sm sm:text-lg font-bold mb-2">Job Portal</h3>
-                      <p className="text-xs">Career Platform</p>
+                  <img 
+                    src={jobImage} 
+                    alt={project.title}
+                    className="w-full h-full object-cover rounded-2xl sm:rounded-3xl"
+                  />
+                ) : null}
                     </div>
-                  </div>
-                ) : (
-                  <div className="h-full bg-gradient-to-br from-purple-600 to-purple-800 flex items-center justify-center">
-                    <div className="text-center text-white">
-                      <h3 className="text-sm sm:text-lg font-bold mb-2">Wholesale</h3>
-                      <p className="text-xs">B2B Platform</p>
-                    </div>
+              {/* Active Indicator */}
+              {selectedProject === index && (
+                <div className="absolute -top-2 -right-2 w-6 h-6 bg-[#208975] rounded-full border-2 border-white flex items-center justify-center z-20">
+                  <div className="w-2 h-2 bg-white rounded-full"></div>
                   </div>
                 )}
-              </div>
             </div>
           ))}
         </div>
@@ -464,7 +485,7 @@ function TestimonialsSection() {
   };
 
   return (
-    <section className="py-10 sm:py-20 px-4 sm:px-8 bg-[#1E8975]">
+    <section className="pt-10 sm:pt-16 lg:pt-20 pb-10 sm:pb-20 px-4 sm:px-8 bg-[#208975] rounded-t-[5rem] sm:rounded-t-[6rem] md:rounded-t-[7rem] lg:rounded-t-[8rem] xl:rounded-t-[10rem] 2xl:rounded-t-[12rem]">
       <div className="max-w-7xl mx-auto">
         <div className="flex flex-col lg:grid lg:grid-cols-2 gap-8 lg:gap-16 items-center">
           {/* Left Side - Title and Main Quote */}
@@ -473,10 +494,10 @@ function TestimonialsSection() {
               What Our Clients <br />
               <span className="text-teal-200">Says</span>
             </h2>
-            <div className="text-lg sm:text-2xl lg:text-4xl text-white font-serif italic leading-relaxed">
-              <span className="text-3xl sm:text-4xl lg:text-6xl">"</span>
-              "Our clients love the creativity, timely delivery, and professionalism of Webbiez Infotech. They appreciate how we turn ideas into impactful digital solutions that boost growth, visibility, and business success."
-              <span className="text-3xl sm:text-4xl lg:text-6xl">"</span>
+            <div className="text-lg sm:text-xl lg:text-2xl text-white font-serif italic leading-relaxed">
+              <span className="text-4xl sm:text-5xl lg:text-7xl inline-block mr-2">"</span>
+              Our clients love the creativity, timely delivery, and professionalism of Webbiez Infotech. They appreciate how we turn ideas into impactful digital solutions that boost growth, visibility, and business success.
+              <span className="text-4xl sm:text-5xl lg:text-7xl inline-block ml-2">"</span>
             </div>
           </div>
 
@@ -486,36 +507,36 @@ function TestimonialsSection() {
               {/* Navigation Arrows - Hidden on mobile */}
               <button
                 onClick={prevTestimonial}
-                className="hidden lg:flex absolute -left-16 top-1/2 transform -translate-y-1/2 w-12 h-12 bg-transparent border-2 border-white rounded-full items-center justify-center text-white hover:text-[#1E8975] hover:bg-white transition duration-300 z-10"
+                className="hidden lg:flex absolute -left-16 top-1/2 transform -translate-y-1/2 w-12 h-12 bg-transparent border-2 border-white rounded-full items-center justify-center text-white hover:text-[#208975] hover:bg-white transition duration-300 z-10"
               >
                 <FaChevronLeft className="text-lg" />
               </button>
               
               <button
                 onClick={nextTestimonial}
-                className="hidden lg:flex absolute -right-16 top-1/2 transform -translate-y-1/2 w-12 h-12 bg-transparent border-2 border-white rounded-full items-center justify-center text-white hover:text-[#1E8975] hover:bg-white transition duration-300 z-10"
+                className="hidden lg:flex absolute -right-16 top-1/2 transform -translate-y-1/2 w-12 h-12 bg-transparent border-2 border-white rounded-full items-center justify-center text-white hover:text-[#208975] hover:bg-white transition duration-300 z-10"
               >
                 <FaChevronRight className="text-lg" />
               </button>
 
               {/* Testimonial Card */}
-              <div className="bg-white rounded-2xl p-4 sm:p-8 shadow-xl max-w-md">
-                <div className="text-4xl sm:text-6xl text-[#1E8975] mb-4">"</div>
-                <p className="text-[#07191B] text-base sm:text-lg leading-relaxed mb-6">
+              <div className="bg-white rounded-3xl sm:rounded-[2rem] lg:rounded-[2.5rem] p-6 sm:p-8 lg:p-10 shadow-xl max-w-md">
+                <div className="text-5xl sm:text-6xl lg:text-7xl text-[#208975] mb-4 font-serif">"</div>
+                <p className="text-[#07191B] text-base sm:text-lg leading-relaxed mb-6 sm:mb-8">
                   {testimonials[currentTestimonial].quote}
                 </p>
-                <div className="border-t border-gray-200 pt-4 sm:pt-6">
-                  <div className="flex items-center gap-3 sm:gap-4">
+                <div className="border-t border-gray-200 pt-5 sm:pt-6">
+                  <div className="flex items-center gap-4 sm:gap-5">
                     <img
                       src={testimonials[currentTestimonial].avatar}
                       alt={testimonials[currentTestimonial].author}
-                      className="w-10 h-10 sm:w-12 sm:h-12 rounded-full object-cover"
+                      className="w-12 h-12 sm:w-14 sm:h-14 rounded-full object-cover border-2 border-gray-200"
                     />
                     <div>
-                      <h4 className="font-bold text-[#07191B] text-base sm:text-lg">
+                      <h4 className="font-bold text-[#07191B] text-base sm:text-lg mb-1">
                         {testimonials[currentTestimonial].author}
                       </h4>
-                      <p className="text-gray-600 text-xs sm:text-sm">
+                      <p className="text-gray-600 text-sm sm:text-base">
                         {testimonials[currentTestimonial].role}
                       </p>
                     </div>
@@ -575,87 +596,56 @@ function FAQsSection() {
     <section className="py-10 sm:py-20 px-4 sm:px-8 bg-white">
       <div className="max-w-7xl mx-auto">
         {/* Section Title */}
-        <h2 className="text-3xl sm:text-4xl lg:text-6xl font-bold text-[#1E8975] text-center mb-8 sm:mb-16 font-serif">
+        <h2 className="text-3xl sm:text-4xl lg:text-6xl font-bold text-[#208975] text-center mb-8 sm:mb-16 font-serif">
           FAQs
         </h2>
 
         <div className="flex flex-col lg:flex-row gap-8 lg:gap-16 justify-between items-start">
           {/* Left Side - FAQ Accordion */}
-          <div className="space-y-4 w-full lg:w-auto">
+          <div className="space-y-4 w-full lg:w-1/2 lg:flex-shrink-0">
             {faqs.map((faq, index) => (
-              <div key={faq.id} className="bg-teal-50 rounded-lg border border-teal-100">
+              <div key={faq.id} className="bg-teal-50 rounded-lg border border-teal-100 w-full transition-all duration-300">
                 {/* Question */}
                 <button
                   onClick={() => toggleFAQ(faq.id)}
-                  className="w-full p-4 sm:p-6 text-left flex justify-between items-center hover:bg-teal-100 transition duration-300"
+                  className="w-full p-4 sm:p-6 text-left flex justify-between items-center hover:bg-teal-100 transition-all duration-300"
                 >
-                  <div className="flex items-center gap-2 sm:gap-4">
-                    <span className="text-[#1E8975] font-bold text-sm sm:text-lg">
+                  <div className="flex items-center gap-2 sm:gap-4 flex-1 min-w-0">
+                    <span className="text-[#208975] font-bold text-sm sm:text-lg flex-shrink-0">
                       Que{index + 1}.
                     </span>
-                    <span className="text-[#07191B] font-medium text-sm sm:text-lg">
+                    <span className="text-[#07191B] font-medium text-sm sm:text-lg break-words">
                       {faq.question}
                     </span>
                   </div>
-                  <div className="text-[#1E8975] text-xl sm:text-2xl font-bold">
+                  <div className={`text-[#208975] text-xl sm:text-2xl font-bold flex-shrink-0 ml-2 transition-transform duration-300 ${expandedFAQ === faq.id ? 'rotate-180' : ''}`}>
                     {expandedFAQ === faq.id ? '−' : '+'}
                   </div>
                 </button>
 
                 {/* Answer */}
-                {expandedFAQ === faq.id && (
-                  <div className="px-4 sm:px-6 pb-4 sm:pb-6">
-                    <div className="bg-teal-50 rounded-lg p-3 sm:p-4 border border-teal-100">
-                      <p className="text-[#07191B] leading-relaxed text-sm sm:text-base">
+                <div className={`overflow-hidden transition-all duration-300 ease-in-out ${expandedFAQ === faq.id ? 'max-h-[500px] opacity-100' : 'max-h-0 opacity-0'}`}>
+                  <div className="px-4 sm:px-6 pb-4 sm:pb-6 w-full">
+                    <div className="bg-teal-50 rounded-lg p-3 sm:p-4 border border-teal-100 w-full">
+                      <p className="text-[#07191B] leading-relaxed text-sm sm:text-base break-words">
                         {faq.answer}
                       </p>
                     </div>
                   </div>
-                )}
+                </div>
               </div>
             ))}
           </div>
 
-          {/* Right Side - 3D Illustration Placeholder */}
-          <div className="flex justify-center items-center w-full lg:w-auto">
-            <div className="relative">
-              {/* 3D Character Illustration Placeholder */}
-              <div className="w-64 h-64 sm:w-80 sm:h-96 bg-gradient-to-br from-teal-100 to-teal-200 rounded-2xl sm:rounded-3xl flex items-center justify-center relative overflow-hidden">
-                {/* Character Silhouette */}
-                <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2">
-                  {/* Beanbag Chair */}
-                  <div className="w-32 h-20 bg-teal-400 rounded-full relative">
-                    <div className="absolute -top-2 left-1/2 transform -translate-x-1/2 w-24 h-16 bg-teal-500 rounded-full"></div>
+          {/* Right Side - FAQ Illustration */}
+          <div className="flex justify-center items-center w-full lg:w-1/2 lg:flex-shrink-0">
+            <div className="relative w-full flex justify-center">
+              <img 
+                src={faqImage} 
+                alt="FAQ Illustration"
+                className="w-64 h-64 sm:w-80 sm:h-96 lg:w-96 lg:h-[28rem] object-contain rounded-2xl sm:rounded-3xl"
+              />
                   </div>
-                  
-                  {/* Person */}
-                  <div className="absolute -top-8 left-1/2 transform -translate-x-1/2">
-                    {/* Head */}
-                    <div className="w-8 h-8 bg-orange-200 rounded-full mb-2"></div>
-                    {/* Body */}
-                    <div className="w-12 h-16 bg-gray-600 rounded-lg relative">
-                      {/* Laptop */}
-                      <div className="absolute -top-2 left-1/2 transform -translate-x-1/2 w-8 h-4 bg-gray-300 rounded"></div>
-                    </div>
-                    {/* Arms */}
-                    <div className="absolute -left-2 top-4 w-3 h-8 bg-orange-200 rounded-full"></div>
-                    <div className="absolute -right-2 top-4 w-3 h-8 bg-orange-200 rounded-full"></div>
-                  </div>
-                </div>
-
-                {/* Question Mark */}
-                <div className="absolute top-8 right-8">
-                  <div className="w-16 h-16 bg-teal-400 rounded-full flex items-center justify-center">
-                    <span className="text-white text-3xl font-bold">?</span>
-                  </div>
-                </div>
-
-                {/* Decorative Elements */}
-                <div className="absolute top-4 left-4 w-4 h-4 bg-teal-300 rounded-full opacity-60"></div>
-                <div className="absolute top-12 left-8 w-2 h-2 bg-teal-400 rounded-full opacity-40"></div>
-                <div className="absolute bottom-8 right-12 w-3 h-3 bg-teal-300 rounded-full opacity-50"></div>
-              </div>
-            </div>
           </div>
         </div>
       </div>
@@ -671,26 +661,137 @@ function ContactSection() {
     email: '',
     message: ''
   });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [showSuccessPopup, setShowSuccessPopup] = useState(false);
+  const [phoneError, setPhoneError] = useState('');
+
+  const validatePhone = (phone) => {
+    const phoneNumber = phone.replace(/\D/g, ''); // Remove non-digits
+    if (phoneNumber.length === 0) {
+      return { isValid: false, error: 'Phone number is required' };
+    } else if (phoneNumber.length !== 10) {
+      return { isValid: false, error: 'Phone number must be exactly 10 digits' };
+    }
+    return { isValid: true, error: '' };
+  };
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
+    
+    if (name === 'phone') {
+      // Only allow digits and limit to 10 digits
+      const phoneNumber = value.replace(/\D/g, '').slice(0, 10);
+      setFormData(prev => ({
+        ...prev,
+        [name]: phoneNumber
+      }));
+      // Validate on change
+      const validation = validatePhone(phoneNumber);
+      setPhoneError(validation.error);
+    } else {
     setFormData(prev => ({
       ...prev,
       [name]: value
     }));
+    }
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // Handle form submission here
-    console.log('Form submitted:', formData);
+    
+    // Validate phone number before submission
+    const phoneValidation = validatePhone(formData.phone);
+    if (!phoneValidation.isValid) {
+      setPhoneError(phoneValidation.error);
+      return;
+    }
+
+    setIsSubmitting(true);
+
+    try {
+      // Using EmailJS (Secure - doesn't expose email in Network tab)
+      // Install: npm install @emailjs/browser
+      // Setup: https://www.emailjs.com/docs/
+      // Replace these with your EmailJS credentials:
+      const serviceID = 'YOUR_SERVICE_ID';
+      const templateID = 'YOUR_TEMPLATE_ID';
+      const publicKey = 'YOUR_PUBLIC_KEY';
+
+      const emailjs = await import('@emailjs/browser').catch(() => null);
+      
+      if (emailjs && serviceID !== 'YOUR_SERVICE_ID' && templateID !== 'YOUR_TEMPLATE_ID' && publicKey !== 'YOUR_PUBLIC_KEY') {
+        // EmailJS method - Secure (email not exposed in Network tab)
+        const templateParams = {
+          to_email: 'webbiezinfotech@gmail.com',
+          from_name: formData.name,
+          from_email: formData.email,
+          phone: formData.phone,
+          message: formData.message,
+          reply_to: formData.email
+        };
+
+        await emailjs.default.send(serviceID, templateID, templateParams, publicKey);
+      } else {
+        // Using FormSubmit - Works immediately without setup
+        const targetEmail = 'webbiezinfotech@gmail.com';
+        const response = await fetch(`https://formsubmit.co/ajax/${encodeURIComponent(targetEmail)}`, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            'Accept': 'application/json'
+          },
+          body: JSON.stringify({
+            name: formData.name,
+            email: formData.email,
+            phone: formData.phone,
+            message: formData.message,
+            _subject: `New Contact Form Submission from ${formData.name}`,
+            _captcha: false,
+            _template: 'box'
+          })
+        });
+
+        if (!response.ok) {
+          const errorText = await response.text();
+          throw new Error('Failed to send message. Please try again.');
+        }
+
+        const result = await response.json();
+        if (!result.success && result.success !== 'true') {
+          throw new Error(result.message || 'Failed to send message');
+        }
+      }
+
+      // Show success popup
+      setShowSuccessPopup(true);
+      
+      // Reset form
+      setFormData({
+        name: '',
+        phone: '',
+        email: '',
+        message: ''
+      });
+      setPhoneError('');
+
+      // Hide popup after 4 seconds
+      setTimeout(() => {
+        setShowSuccessPopup(false);
+      }, 4000);
+
+    } catch (error) {
+      // Don't log sensitive data to console
+      alert('Failed to send message. Please try again or contact us directly.');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
     <section className="py-10 sm:py-20 px-4 sm:px-8 bg-white">
       <div className="max-w-7xl mx-auto">
         {/* Section Title */}
-        <h2 className="text-3xl sm:text-4xl lg:text-6xl font-bold text-[#1E8975] text-center mb-8 sm:mb-16 font-serif">
+        <h2 className="text-3xl sm:text-4xl lg:text-6xl font-bold text-[#208975] text-center mb-8 sm:mb-16 font-serif">
           Contact Us
         </h2>
 
@@ -706,16 +807,28 @@ function ContactSection() {
                   placeholder="Name"
                   value={formData.name}
                   onChange={handleInputChange}
-                  className="flex-1 bg-teal-600 text-white placeholder-white px-4 sm:px-6 py-3 sm:py-4 rounded-xl sm:rounded-2xl border-none focus:outline-none focus:ring-2 focus:ring-teal-400 text-sm sm:text-base"
+                  required
+                  style={{ backgroundColor: '#208975' }}
+                  className="flex-1 !bg-[#208975] text-white placeholder-white px-4 sm:px-6 py-3 sm:py-4 rounded-xl sm:rounded-2xl border-none focus:outline-none focus:ring-2 focus:ring-[#208975] text-sm sm:text-base"
                 />
+                <div className="flex-1">
                 <input
                   type="tel"
                   name="phone"
-                  placeholder="Phone"
+                    placeholder="Phone (10 digits)"
                   value={formData.phone}
                   onChange={handleInputChange}
-                  className="flex-1 bg-teal-600 text-white placeholder-white px-4 sm:px-6 py-3 sm:py-4 rounded-xl sm:rounded-2xl border-none focus:outline-none focus:ring-2 focus:ring-teal-400 text-sm sm:text-base"
-                />
+                    required
+                    maxLength="10"
+                    style={{ backgroundColor: phoneError ? '#dc2626' : '#208975' }}
+                    className={`w-full text-white placeholder-white px-4 sm:px-6 py-3 sm:py-4 rounded-xl sm:rounded-2xl border-2 ${phoneError ? '!bg-red-600 border-red-500' : '!bg-[#208975] border-none'} focus:outline-none focus:ring-2 ${phoneError ? 'focus:ring-red-500' : 'focus:ring-[#208975]'} text-sm sm:text-base font-serif tracking-wide transition-colors`}
+                  />
+                  {phoneError && (
+                    <p className="text-red-500 text-xs sm:text-sm mt-1 px-2 font-medium">
+                      {phoneError}
+                    </p>
+                  )}
+                </div>
               </div>
 
               {/* Email Field */}
@@ -725,7 +838,9 @@ function ContactSection() {
                 placeholder="Email"
                 value={formData.email}
                 onChange={handleInputChange}
-                className="w-full bg-teal-600 text-white placeholder-white px-4 sm:px-6 py-3 sm:py-4 rounded-xl sm:rounded-2xl border-none focus:outline-none focus:ring-2 focus:ring-teal-400 text-sm sm:text-base"
+                required
+                style={{ backgroundColor: '#208975' }}
+                className="w-full !bg-[#208975] text-white placeholder-white px-4 sm:px-6 py-3 sm:py-4 rounded-xl sm:rounded-2xl border-none focus:outline-none focus:ring-2 focus:ring-[#208975] text-sm sm:text-base"
               />
 
               {/* Message Field */}
@@ -735,17 +850,45 @@ function ContactSection() {
                 value={formData.message}
                 onChange={handleInputChange}
                 rows={4}
-                className="w-full bg-teal-600 text-white placeholder-white px-4 sm:px-6 py-3 sm:py-4 rounded-xl sm:rounded-2xl border-none focus:outline-none focus:ring-2 focus:ring-teal-400 resize-none text-sm sm:text-base"
+                required
+                style={{ backgroundColor: '#208975' }}
+                className="w-full !bg-[#208975] text-white placeholder-white px-4 sm:px-6 py-3 sm:py-4 rounded-xl sm:rounded-2xl border-none focus:outline-none focus:ring-2 focus:ring-[#208975] resize-none text-sm sm:text-base"
               />
 
               {/* Submit Button */}
               <button
                 type="submit"
-                className="bg-white border-2 border-teal-600 text-teal-600 px-6 sm:px-8 py-3 sm:py-4 rounded-xl sm:rounded-2xl font-semibold hover:bg-teal-600 hover:text-white transition duration-300 text-sm sm:text-base"
+                disabled={isSubmitting}
+                className="bg-white border-2 border-[#208975] text-[#208975] px-6 sm:px-8 py-3 sm:py-4 rounded-xl sm:rounded-2xl font-semibold hover:bg-[#208975] hover:text-white transition duration-300 text-sm sm:text-base disabled:opacity-50 disabled:cursor-not-allowed"
               >
-                Submit
+                {isSubmitting ? 'Sending...' : 'Submit'}
               </button>
             </form>
+
+            {/* Success Popup */}
+            {showSuccessPopup && (
+              <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4">
+                <div className="bg-white rounded-2xl sm:rounded-3xl p-6 sm:p-8 lg:p-10 max-w-md w-full text-center shadow-2xl transform transition-all duration-300 scale-100">
+                  <div className="mb-4">
+                    <div className="w-16 h-16 sm:w-20 sm:h-20 bg-[#208975] rounded-full flex items-center justify-center mx-auto mb-4">
+                      <svg className="w-8 h-8 sm:w-10 sm:h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                      </svg>
+                    </div>
+                    <h3 className="text-2xl sm:text-3xl font-bold text-[#208975] mb-2">Success!</h3>
+                    <p className="text-lg sm:text-xl text-gray-700">
+                      Your message has been sent successfully!
+                    </p>
+                  </div>
+                  <button
+                    onClick={() => setShowSuccessPopup(false)}
+                    className="mt-4 bg-[#208975] text-white px-6 sm:px-8 py-2 sm:py-3 rounded-lg sm:rounded-xl font-semibold hover:bg-opacity-90 transition duration-300"
+                  >
+                    Close
+                  </button>
+                </div>
+              </div>
+            )}
           </div>
 
           {/* Right Side - Contact Information */}
@@ -759,19 +902,19 @@ function ContactSection() {
               </div>
 
               {/* Phone Number */}
-              <div className="bg-teal-600 text-white px-4 sm:px-6 py-3 sm:py-4 rounded-xl sm:rounded-2xl flex items-center gap-3 sm:gap-4">
+              <div className="bg-[#208975] text-white px-4 sm:px-6 py-3 sm:py-4 rounded-xl sm:rounded-2xl flex items-center gap-3 sm:gap-4">
                 <FaPhone className="text-lg sm:text-xl" />
-                <span className="text-base sm:text-lg">+91 9144716600</span>
+                <span className="text-base sm:text-lg font-serif tracking-wide">+91 9144716600 , +91 7378852436</span>
               </div>
 
               {/* Email Address */}
-              <div className="bg-teal-600 text-white px-4 sm:px-6 py-3 sm:py-4 rounded-xl sm:rounded-2xl flex items-center gap-3 sm:gap-4">
+              <div className="bg-[#208975] text-white px-4 sm:px-6 py-3 sm:py-4 rounded-xl sm:rounded-2xl flex items-center gap-3 sm:gap-4">
                 <FaEnvelope className="text-lg sm:text-xl" />
-                <span className="text-base sm:text-lg">wiinfo@gmail.com</span>
+                <span className="text-base sm:text-lg">webbiezinfotech@gmail.com</span>
               </div>
 
               {/* Location */}
-              <div className="bg-teal-600 text-white px-4 sm:px-6 py-3 sm:py-4 rounded-xl sm:rounded-2xl flex items-center gap-3 sm:gap-4">
+              <div className="bg-[#208975] text-white px-4 sm:px-6 py-3 sm:py-4 rounded-xl sm:rounded-2xl flex items-center gap-3 sm:gap-4">
                 <FaMapMarkerAlt className="text-lg sm:text-xl" />
                 <span className="text-base sm:text-lg">Jabalpur, Madhya Pradesh</span>
               </div>
@@ -786,88 +929,77 @@ function ContactSection() {
 // Footer Section Component
 function FooterSection() {
   return (
-    <footer className="bg-[#1E8975] text-white">
+    <footer className="bg-[#208975] text-white">
       {/* Main Footer Content */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-8 py-8 sm:py-16">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
-          {/* Company Info Column */}
-          <div className="space-y-4">
-            <div className="flex items-center gap-4">
+      <div className="max-w-7xl mx-auto px-4 sm:px-8 py-10 sm:py-12 lg:py-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-10 lg:gap-12">
+          {/* Company Info Column - Wider */}
+          <div className="lg:col-span-1 space-y-4 sm:space-y-5">
+            <div className="flex items-center gap-3 sm:gap-4">
               {/* Logo */}
-              <div className="relative">
-                <FaDesktop className="text-3xl text-white" />
-                <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
-                  <span className="text-white font-bold text-sm">W</span>
-                </div>
-                {/* Network Elements */}
-                <div className="absolute -top-1 -right-1">
-                  <div className="grid grid-cols-2 gap-1">
-                    <div className="w-2 h-2 bg-white opacity-60 transform rotate-45"></div>
-                    <div className="w-2 h-2 bg-white opacity-80 transform rotate-45"></div>
-                    <div className="w-2 h-2 bg-white opacity-40 transform rotate-45"></div>
-                    <div className="w-2 h-2 bg-white opacity-70 transform rotate-45"></div>
-                  </div>
+              <div className="relative flex-shrink-0">
+                <div className="w-14 h-14 sm:w-16 sm:h-16 lg:w-18 lg:h-18 bg-white/10 rounded-lg flex items-center justify-center relative">
+                  <span className="text-white font-bold text-xl sm:text-2xl lg:text-3xl font-serif">W</span>
+                  {/* Hexagonal shapes around logo */}
+                  <div className="absolute -top-1 -right-1 w-3 h-3 bg-white opacity-60 transform rotate-45"></div>
+                  <div className="absolute -bottom-1 -left-1 w-2 h-2 bg-white opacity-80 transform rotate-45"></div>
+                  <div className="absolute top-1/2 -left-1 w-2 h-2 bg-white opacity-40 transform rotate-45"></div>
+                  <div className="absolute top-1/2 -right-1 w-2 h-2 bg-white opacity-70 transform rotate-45"></div>
                 </div>
               </div>
               <div>
-                <h3 className="text-lg sm:text-xl font-bold text-white">Webbiez infotech</h3>
-                <p className="text-teal-200 text-xs sm:text-sm">Innovating the Innovation</p>
+                {/* <h3 className="text-xl sm:text-2xl lg:text-3xl font-bold text-white font-serif">wwWebbiez iiinfotech</h3> */}
+                <p className="text-white/90 text-sm sm:text-base lg:text-lg font-serif mt-1">Innovating the Innovation</p>
               </div>
             </div>
-            <p className="text-white text-xs sm:text-sm leading-relaxed">
+            <p className="text-white/90 text-base sm:text-lg lg:text-xl leading-relaxed font-serif">
               Webbiez Infotech – Crafting digital experiences with creativity and technology. Let's build the future, one innovation at a time.
+            </p>
+            <p className="text-white/80 text-sm sm:text-base lg:text-lg font-serif">
+              WebbiezInfotech @2025, all rights reserved
             </p>
           </div>
 
           {/* Pages Column */}
-          <div className="space-y-3 sm:space-y-4">
-            <h4 className="text-base sm:text-lg font-bold text-white font-serif">Pages</h4>
-            <ul className="space-y-2">
-              <li><a href="#" className="text-white hover:text-teal-200 transition duration-300 text-sm sm:text-base">Home</a></li>
-              <li><a href="#" className="text-white hover:text-teal-200 transition duration-300 text-sm sm:text-base">About us</a></li>
-              <li><a href="#" className="text-white hover:text-teal-200 transition duration-300 text-sm sm:text-base">Services</a></li>
-              <li><a href="#" className="text-white hover:text-teal-200 transition duration-300 text-sm sm:text-base">Projects</a></li>
+          <div className="space-y-4 sm:space-y-5">
+            <h4 className="text-lg sm:text-xl lg:text-2xl font-bold text-white font-serif">Pages</h4>
+            <ul className="space-y-2 sm:space-y-3">
+              <li><a href="#" className="text-white/90 hover:text-white transition duration-300 text-base sm:text-lg lg:text-xl font-serif">Home</a></li>
+              <li><a href="#" className="text-white/90 hover:text-white transition duration-300 text-base sm:text-lg lg:text-xl font-serif">About us</a></li>
+              <li><a href="#" className="text-white/90 hover:text-white transition duration-300 text-base sm:text-lg lg:text-xl font-serif">Services</a></li>
+              <li><a href="#" className="text-white/90 hover:text-white transition duration-300 text-base sm:text-lg lg:text-xl font-serif">Projects</a></li>
             </ul>
           </div>
 
           {/* Queries Column */}
-          <div className="space-y-3 sm:space-y-4">
-            <h4 className="text-base sm:text-lg font-bold text-white font-serif">Queries</h4>
-            <ul className="space-y-2">
-              <li><a href="#" className="text-white hover:text-teal-200 transition duration-300 text-sm sm:text-base">Testimonials</a></li>
-              <li><a href="#" className="text-white hover:text-teal-200 transition duration-300 text-sm sm:text-base">FAQs</a></li>
-              <li><a href="#" className="text-white hover:text-teal-200 transition duration-300 text-sm sm:text-base">Contact</a></li>
+          <div className="space-y-4 sm:space-y-5">
+            <h4 className="text-lg sm:text-xl lg:text-2xl font-bold text-white font-serif">Queries</h4>
+            <ul className="space-y-2 sm:space-y-3">
+              <li><a href="#" className="text-white/90 hover:text-white transition duration-300 text-base sm:text-lg lg:text-xl font-serif">Testimonials</a></li>
+              <li><a href="#" className="text-white/90 hover:text-white transition duration-300 text-base sm:text-lg lg:text-xl font-serif">FAQs</a></li>
+              <li><a href="#" className="text-white/90 hover:text-white transition duration-300 text-base sm:text-lg lg:text-xl font-serif">Contact</a></li>
             </ul>
           </div>
 
           {/* Social Media Column */}
-          <div className="space-y-3 sm:space-y-4">
-            <h4 className="text-base sm:text-lg font-bold text-white font-serif">Social Media</h4>
-            <div className="flex gap-3 sm:gap-4">
-              <a href="#" className="text-white hover:text-teal-200 transition duration-300">
-                <FaWhatsapp className="text-xl sm:text-2xl" />
+          <div className="space-y-4 sm:space-y-5">
+            <h4 className="text-lg sm:text-xl lg:text-2xl font-bold text-white font-serif">Social Media</h4>
+            <div className="flex gap-4 sm:gap-5">
+              <a href="#" className="text-white hover:text-white/80 transition duration-300">
+                <FaWhatsapp className="text-3xl sm:text-4xl lg:text-5xl" />
               </a>
-              <a href="#" className="text-white hover:text-teal-200 transition duration-300">
-                <FaInstagram className="text-xl sm:text-2xl" />
+              <a href="#" className="text-white hover:text-white/80 transition duration-300">
+                <FaInstagram className="text-3xl sm:text-4xl lg:text-5xl" />
               </a>
-              <a href="#" className="text-white hover:text-teal-200 transition duration-300">
-                <FaLinkedin className="text-xl sm:text-2xl" />
+              <a href="#" className="text-white hover:text-white/80 transition duration-300">
+                <FaLinkedin className="text-3xl sm:text-4xl lg:text-5xl" />
               </a>
             </div>
-          </div>
-        </div>
-      </div>
-
-      {/* Bottom Section - Copyright and Privacy Policy */}
-      <div className="border-t border-teal-600">
-        <div className="max-w-7xl mx-auto px-4 sm:px-8 py-4 sm:py-6">
-          <div className="flex flex-col sm:flex-row justify-between items-center gap-3 sm:gap-4">
-            <p className="text-white text-xs sm:text-sm">
-              WebbiezInfotech @2025, all rights reserved
-            </p>
-            <a href="#" className="text-white hover:text-teal-200 transition duration-300 text-xs sm:text-sm">
+            <div className="pt-4">
+              <a href="#" className="text-white/90 hover:text-white transition duration-300 text-base sm:text-lg lg:text-xl font-serif">
               Privacy Policy
             </a>
+            </div>
           </div>
         </div>
       </div>
