@@ -491,22 +491,22 @@ function TestimonialsSection() {
   const testimonials = [
     {
       id: 0,
-      quote: "Our clients love the creativity, timely delivery, and professionalism of Webbiez Infotech. They appreciate how we turn ideas into impactful digital solutions that boost growth, visibility, and business success.",
-      author: "Aarti Nathani",
-      role: "UI/UX Designer, Software Developer",
-      avatar: "https://images.unsplash.com/photo-1494790108755-2616b612b786?w=100&h=100&fit=crop&crop=face"
+      quote: "We worked with Webbiez Infotech for our e-commerce website and social media management. From design to development, everything was handled professionally. The final product looked premium and worked flawlessly across devices. I highly recommend them for any web development or social media management needs.",
+      author: "Niraj Bhojwani",
+      role: "E-commerce Business",
+      avatar: "https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?w=100&h=100&fit=crop&crop=face"
     },
     {
       id: 1,
-      quote: "Webbiez Infotech delivered exceptional results for our e-commerce platform. Their attention to detail and user experience design helped us increase conversions by 40%.",
-      author: "Sarah Johnson",
-      role: "E-commerce Manager",
+      quote: "Great experience working with Webbiez Infotech. Their mobile app development and creative approach really helped our brand stand out online. Timely delivery, clear communication, and quality work — exactly what we needed.",
+      author: "Rahul Singh",
+      role: "CEO, Mobile App Business",
       avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop&crop=face"
     },
     {
       id: 2,
-      quote: "The team's expertise in React and modern web technologies is outstanding. They transformed our vision into a beautiful, functional website that our customers love.",
-      author: "Michael Chen",
+      quote: "Webbiez Infotech truly understood our business needs and delivered a clean, modern website with excellent performance. The UI/UX was smooth, and their team was very responsive throughout the project. Highly recommended for startups looking for reliable tech partners.",
+      author: "Rajesh Patel",
       role: "Startup Founder",
       avatar: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100&h=100&fit=crop&crop=face"
     }
