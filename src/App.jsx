@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { FaLinkedin, FaWhatsapp, FaEnvelope, FaInstagram, FaSearch, FaDesktop, FaCircle, FaCode, FaChartLine, FaBullseye, FaShoppingCart, FaUsers, FaPalette, FaMobile, FaChevronLeft, FaChevronRight, FaPhone, FaMapMarkerAlt } from 'react-icons/fa'
+import { FaLinkedin, FaWhatsapp, FaEnvelope, FaInstagram, FaDesktop, FaCircle, FaCode, FaChartLine, FaBullseye, FaShoppingCart, FaUsers, FaPalette, FaMobile, FaChevronLeft, FaChevronRight, FaPhone, FaMapMarkerAlt, FaSearch } from 'react-icons/fa'
 import uiuxImage from './assets/images/WhatsApp Image 2025-12-15 at 3.12.41 PM.jpeg'
 import financialImage from './assets/images/Screenshot 2025-12-15 at 16.07.58.png'
 import jobImage from './assets/images/Screenshot 2025-12-15 at 16.09.44.png'
@@ -12,62 +12,134 @@ import seoImage from './assets/images/Rectangle 34625783-2.png'
 import brandingImage from './assets/images/Rectangle 34625783-3.png'
 import ecommerceImage from './assets/images/Rectangle 34625783-4.png'
 import prImage from './assets/images/Rectangle 34625783-5.png'
+import wilogo from './assets/wilogo.jpg'
 
 const App = () => {
+  const [searchQuery, setSearchQuery] = useState("");
+
+const handleSearch = () => {
+  if (!searchQuery.trim()) return;
+
+  const query = searchQuery.toLowerCase();
+
+  if (query.includes("about")) {
+    document.getElementById("about")?.scrollIntoView({ behavior: "smooth" });
+  } 
+  else if (query.includes("service")) {
+    document.getElementById("services")?.scrollIntoView({ behavior: "smooth" });
+  } 
+  else if (query.includes("project")) {
+    document.getElementById("projects")?.scrollIntoView({ behavior: "smooth" });
+  } 
+  else if (query.includes("contact")) {
+    document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" });
+  } 
+  else if (query.includes("faq")) {
+    document.getElementById("faqs")?.scrollIntoView({ behavior: "smooth" });
+  } 
+  else {
+    alert("No matching section found");
+  }
+};
+
   return (
-    <div className="min-h-screen bg-white text-white">
+    <div className="  " id='home'>
       {/* Hero Section */}
-      <section className="h-screen w-full bg-white overflow-hidden flex">
-        <div className="h-full w-full flex">
-          {/* Left Vertical Bar - Black background with social icons */}
-          <div className="w-16 lg:w-20 flex-shrink-0 bg-[#07191B] flex flex-col items-center justify-center space-y-5 p-4">
-            <FaLinkedin className="text-2xl lg:text-3xl text-white transition cursor-pointer hover:opacity-80" />
-            <FaWhatsapp className="text-2xl lg:text-3xl text-white transition cursor-pointer hover:opacity-80" />
-            <FaEnvelope className="text-2xl lg:text-3xl text-white transition cursor-pointer hover:opacity-80" />
-            <FaInstagram className="text-2xl lg:text-3xl text-white transition cursor-pointer hover:opacity-80" />
-            <div className="w-10 h-10 bg-white rounded-full flex items-center justify-center mt-2">
-              <span className="text-[#07191B] text-lg lg:text-xl font-bold">W</span>
-              </div>
-            </div>
+      <div className="min-h-screen bg-white md:flex justify-center relative md:gap-5 items-center">
+      {/* Social Media Sidebar - Fixed Left */}
+      <div className=" flex flex-col gap-3 md:gap-10 p-2 md:py-10  h-fit bg-[#07191B] rounded-full items-center ">
+        <a 
+          href="https://www.linkedin.com/company/webbiez-infotech/about/?viewAsMember=true" 
+          target="_blank" 
+          rel="noopener noreferrer"
+          className=" w-16 h-16 lg:w-20 lg:h-20  rounded-full flex items-center justify-center text-white cursor-pointer transition-all duration-300 hover:scale-110 hover:bg-[#0077B5] hover:shadow-lg hover:shadow-[#0077B5]/50"
+        >
+          <FaLinkedin className="w-7 h-7 md:w-12 md:h-12 lg:w-12 lg:h-12" />
+        </a>
+        <a 
+          href="https://wa.me/918225807724" 
+          target="_blank" 
+          rel="noopener noreferrer"
+          className=" w-16 h-16 lg:w-20 lg:h-20  rounded-full flex items-center justify-center text-white cursor-pointer transition-all duration-300 hover:scale-110 hover:bg-[#25D366] hover:shadow-lg hover:shadow-[#25D366]/50"
+        >
+          <FaWhatsapp className="w-7 h-7 md:w-12 md:h-12 lg:w-12 lg:h-12" />
+        </a>
+        <a 
+          href="mailto:webbiezinfotech@gmail.com" 
+          className=" w-16 h-16 lg:w-20 lg:h-20  rounded-full flex items-center justify-center text-white cursor-pointer transition-all duration-300 hover:scale-110 hover:bg-[#EA4335] hover:shadow-lg hover:shadow-[#EA4335]/50"
+        >
+          <FaEnvelope className="w-7 h-7 md:w-12 md:h-12 lg:w-12 lg:h-12" />
+        </a>
+        <a 
+          href="#" 
+          target="_blank" 
+          rel="noopener noreferrer"
+          className=" w-16 h-16 lg:w-20 lg:h-20 rounded-full flex items-center justify-center text-white cursor-pointer transition-all duration-300 hover:scale-110 hover:bg-gradient-to-r hover:from-[#833AB4] hover:via-[#FD1D1D] hover:to-[#FCB045] hover:shadow-lg hover:shadow-[#833AB4]/50"
+        >
+          <FaInstagram className="w-7 h-7 md:w-12 md:h-12 lg:w-12 lg:h-12" />
+        </a>
+        <div className=" bg-[#1E8975] h-10 w-10 md:h-12 md:w-12 lg:w-16 lg:h-16  rounded-full flex items-center justify-center text-white font-bold text-xl md:text-2xl cursor-pointer transition-all duration-300 hover:scale-125 hover:bg-[#1E8975] hover:shadow-lg hover:shadow-[#1E8975]/50">
+          W
+        </div>
+      </div>
 
-          {/* Left Green Vertical Element */}
-          <div className="w-4 lg:w-6 flex-shrink-0 bg-[#208975]"></div>
+      {/* Main Container */}
+      <div className="max-w-7xl w-full relative">
+        {/* Top Right - Search and Logo */}
+        <div className="absolute -top-5 right-20 z-20 bg-white rounded-3xl p-2">
+  <div className="bg-[#07191B] rounded-full p-2 shadow-lg inline-flex items-center gap-2">
+    
+    <button       onClick={handleSearch}
+      className="bg-[#1E8975] rounded-full px-6 py-3 flex items-center gap-2 text-white">
+    <FaSearch className="w-5 h-5" />
+    <input
+      type="text"
+      placeholder="Search..."
+      value={searchQuery}
+      onChange={(e) => setSearchQuery(e.target.value)}
+      onKeyDown={(e) => e.key === "Enter" && handleSearch()}
+      className="py-2 rounded-full bg-[#1e8975] outline-none text-sm w-20 placeholder-white"
+    />
+    </button>
 
-          {/* Main Image - Direct image display */}
-          <div className="flex-1 relative overflow-hidden flex items-center justify-center">
-            <img 
-              src={heroImage} 
-              alt="Webbiez Infotech Hero" 
-              className="w-[80%] h-[80%] object-contain"
-            />
+    <div className="w-14 h-14 bg-[#1E8975] rounded-full flex items-center justify-center text-white font-bold text-2xl">
+      W
+    </div>
 
-            {/* Top Right - Search Bar - On image */}
-            <div className="absolute top-4 right-4 sm:top-6 sm:right-6 z-40 flex gap-3">
-              <div className="bg-white border-2 border-[#07191B] rounded-full px-4 sm:px-5 py-2 flex items-center gap-2">
-                <FaSearch className="text-[#07191B] text-sm" />
-                <span className="text-[#07191B] text-sm font-medium">Search</span>
-              </div>
-              <div className="w-10 h-10 sm:w-12 sm:h-12 bg-white border-2 border-[#07191B] rounded-full flex items-center justify-center">
-                <span className="text-[#07191B] font-bold text-sm sm:text-base">W</span>
-              </div>
-            </div>
+  </div>
+        </div>
 
-            {/* Bottom Right - Innovation Box - On image */}
-            <div className="absolute bottom-4 right-4 sm:bottom-6 sm:right-6 lg:bottom-8 lg:right-8 z-40">
-              <div className="bg-[#07191B] rounded-xl sm:rounded-2xl lg:rounded-3xl p-4 sm:p-5 lg:p-6 max-w-xs sm:max-w-sm border border-white">
-                <h3 className="text-sm sm:text-base lg:text-lg font-bold text-white underline mb-2 sm:mb-3 font-serif">
-                  Innovating the Innovation
-                </h3>
-                <p className="text-white text-xs sm:text-sm leading-relaxed font-serif">
-                  At Webbiez Infotech, we don't just create technology—we create experiences. From powerful websites to stunning apps, our mission is to turn bold ideas into digital reality.
-                </p>
-              </div>
+
+        {/* Main Hero Card */}
+        <div className="bg-[#1E8975] rounded-[3rem] overflow-hidden relative h-[630px]">
+          {/* Title Section */}
+          <div className=" ">
+            <h1 className="ms-20 text-white font-bold leading-tight text-[100px] md:text-[130px] lg:text-[150px] ">
+              WEBBIEZ <br /><span className="m-40">INFOTECH</span>
+            </h1>
+          </div>
+
+          {/* Bottom Right Info Card */}
+          <div className="absolute -bottom-6 -right-5 w-2/5 p-5 bg-white rounded-3xl">
+            <div className="bg-slate-900 rounded-3xl p-8">
+              <h2 className="text-white text-2xl font-bold mb-4 leading-tight underline">
+                Innovating the Innovation
+              </h2>
+              <p className="text-white leading-relaxed text-base">
+                At Webbiez Infotech, we don't just create technology—we create experiences. From powerful websites to stunning apps, our mission is to turn bold ideas into digital reality.
+              </p>
             </div>
           </div>
+
+          {/* Bottom Left Decorative Oval */}
+          {/* <div className="absolute bottom-0 left-0 w-64 h-40 bg-teal-700 rounded-full transform translate-y-12 -translate-x-8"></div> */}
         </div>
-      </section>
+      </div>
+    </div>
+
+    
       {/* About Us Section */}
-      <section className="py-10 sm:py-20 px-4 sm:px-8 bg-[#07191B]">
+      <section className="py-10 sm:py-20 px-4 sm:px-8 bg-[#07191B]" id='about'>
         {/* Top Line - 60% width from left to right */}
         <div className="w-[60%] h-2 sm:h-3 lg:h-4 bg-white rounded-full mb-8 sm:mb-16"></div>
         
@@ -76,49 +148,12 @@ const App = () => {
           <h2 className="text-3xl sm:text-4xl lg:text-6xl font-bold text-white text-center mb-8 sm:mb-16">Who We Are</h2>
           
           {/* Main Content */}
-          <div className="flex flex-col lg:flex-row items-center gap-8 lg:gap-16">
+          <div className="flex flex-col lg:flex-row items-center justify-center gap-8 lg:gap-16">
             {/* Left Side - Logo Card */}
-            <div className="bg-white rounded-2xl p-4 sm:p-8 flex-shrink-0 w-full max-w-sm mx-auto lg:mx-0">
-              <div className="relative w-full h-64 sm:h-80">
-                {/* Computer Monitor */}
-                <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
-                  <FaDesktop className="text-6xl sm:text-8xl text-green-800" />
-                  <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
-                    <span className="text-2xl sm:text-4xl font-bold text-white">W</span>
-                  </div>
-                </div>
-                
-                {/* Circuit Elements - Left */}
-                <div className="absolute top-1/2 left-8 transform -translate-y-1/2 flex gap-2">
-                  <FaCircle className="text-green-800 text-sm" />
-                  <div className="w-2 h-0.5 bg-green-800"></div>
-                  <FaCircle className="text-green-800 text-sm" />
-                  <div className="w-2 h-0.5 bg-green-800"></div>
-                  <FaCircle className="text-green-800 text-sm" />
-                </div>
-                
-                {/* Hexagonal Network - Top Right */}
-                <div className="absolute top-8 right-8">
-                  <div className="grid grid-cols-3 gap-1">
-                    <div className="w-3 h-3 bg-green-800 opacity-60 transform rotate-45"></div>
-                    <div className="w-3 h-3 bg-green-800 opacity-80 transform rotate-45"></div>
-                    <div className="w-3 h-3 bg-green-800 opacity-40 transform rotate-45"></div>
-                    <div className="w-3 h-3 bg-green-800 opacity-70 transform rotate-45"></div>
-                    <div className="w-3 h-3 bg-green-800 opacity-90 transform rotate-45"></div>
-                    <div className="w-3 h-3 bg-green-800 opacity-50 transform rotate-45"></div>
-                  </div>
-                </div>
-                
-                {/* Company Name */}
-                <div className="absolute bottom-4 sm:bottom-8 left-1/2 transform -translate-x-1/2 text-center">
-                  <h3 className="text-lg sm:text-2xl font-bold text-green-800">Webbiez infotech</h3>
-                  <p className="text-green-800 text-xs sm:text-sm mt-1">Innovating the Innovation</p>
-                </div>
-              </div>
-            </div>
+            <img src={wilogo} alt="" className="w-80 h-80 rounded-2xl" />
             
             {/* Right Side - Description */}
-            <div className="flex-1 text-center lg:text-left">
+            <div className="flex md:w-[55%] text-center lg:text-left">
               <p className="text-white text-base sm:text-lg leading-relaxed font-serif">
                 Webbiez Infotech is a forward-thinking IT solutions company that builds modern, user-friendly, and creative digital platforms. We specialize in ReactJS websites, intuitive UI/UX designs, graphic design, mobile applications, and public relations strategies that help businesses stand out. With a blend of creativity and technology, we deliver solutions that not only look great but also perform flawlessly.
               </p>
@@ -131,7 +166,7 @@ const App = () => {
       </section>
 
       {/* Services Section */}
-      <section className="pt-8 sm:pt-12 lg:pt-16 pb-16 sm:pb-24 lg:pb-32 xl:pb-40 px-4 sm:px-8 bg-[#208975] min-h-screen flex items-start">
+      <section className="pt-8 sm:pt-12 lg:pt-16 pb-16 sm:pb-24 lg:pb-32 xl:pb-40 px-4 sm:px-8 bg-[#1E8975] min-h-screen flex items-start" id='services'>
         <div className="max-w-7xl mx-auto w-full">
           <h2 className="text-3xl sm:text-4xl lg:text-6xl font-bold text-white text-left mb-8 sm:mb-12 lg:mb-16">Services We Offer</h2>
           
@@ -201,12 +236,12 @@ const App = () => {
       </section>
 
       {/* Projects Section */}
-      <section className="-mt-16 sm:-mt-20 lg:-mt-24 xl:-mt-28 2xl:-mt-32 pt-12 sm:pt-16 lg:pt-20 xl:pt-24 pb-10 sm:pb-20 px-4 sm:px-8 bg-white rounded-t-[5rem] sm:rounded-t-[6rem] md:rounded-t-[7rem] lg:rounded-t-[8rem] xl:rounded-t-[10rem] 2xl:rounded-t-[12rem] rounded-b-[5rem] sm:rounded-b-[6rem] md:rounded-b-[7rem] lg:rounded-b-[8rem] xl:rounded-b-[10rem] 2xl:rounded-b-[12rem] relative z-10 mb-0">
+      <section className="-mt-16 sm:-mt-20 lg:-mt-24 xl:-mt-28 2xl:-mt-32 pt-12 sm:pt-16 lg:pt-20 xl:pt-24 pb-10 sm:pb-20 px-4 sm:px-8 bg-white rounded-t-[5rem] sm:rounded-t-[6rem] md:rounded-t-[7rem] lg:rounded-t-[8rem] xl:rounded-t-[10rem] 2xl:rounded-t-[12rem] rounded-b-[5rem] sm:rounded-b-[6rem] md:rounded-b-[7rem] lg:rounded-b-[8rem] xl:rounded-b-[10rem] 2xl:rounded-b-[12rem] relative z-10 mb-0" id='projects'>
         <div className="max-w-[98%] sm:max-w-[95%] lg:max-w-[92%] xl:max-w-[90%] 2xl:max-w-[88%] mx-auto w-full">
           {/* Section Title and Description */}
           <div className="text-center mb-10 sm:mb-16 lg:mb-20">
             <h2 className="text-3xl sm:text-4xl lg:text-6xl font-bold text-[#07191B] mb-4 sm:mb-6">
-              Projects We've <span className="text-[#208975]">Worked on</span>
+              Projects We've <span className="text-[#1E8975]">Worked on</span>
             </h2>
             <p className="text-base sm:text-lg text-[#07191B] max-w-4xl mx-auto leading-relaxed">
               We've worked on diverse projects ranging from responsive websites to complex business portals. Our solutions integrate ReactJS, PHP, Node.js, Flutter, Figma, and modern UI tools to ensure scalability, design precision, and high performance.
@@ -222,10 +257,10 @@ const App = () => {
       <TestimonialsSection />
 
       {/* FAQs Section */}
-      <FAQsSection />
+      <FAQsSection  />
 
       {/* Contact Section */}
-      <ContactSection />
+      <ContactSection id='contact' />
 
       {/* Footer Section */}
       <FooterSection />
@@ -327,14 +362,14 @@ function ProjectsSlider() {
       <div className="flex flex-col lg:flex-row gap-8">
           {/* Project Details Card */}
           <div className="w-full lg:w-1/2 bg-white rounded-2xl sm:rounded-3xl border border-gray-200 p-6 sm:p-8 shadow-lg max-h-[500px] sm:max-h-[600px] overflow-y-auto">
-            <h3 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-[#208975] mb-5">
+            <h3 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-[#1E8975] mb-5">
               {projects[selectedProject].title}
             </h3>
             <p className="text-[#07191B] mb-6 leading-relaxed text-lg sm:text-xl">
               {projects[selectedProject].description}
             </p>
             <div className="mb-7">
-              <h4 className="text-lg sm:text-xl font-bold text-[#208975] mb-3">Technologies Used:-</h4>
+              <h4 className="text-lg sm:text-xl font-bold text-[#1E8975] mb-3">Technologies Used:-</h4>
               <p className="text-[#07191B] text-lg sm:text-xl">
                 {projects[selectedProject].type === 'wholesale' && "React.js, PHP, Admin Panel & Backend Integration"}
                 {projects[selectedProject].type === 'portfolio' && "Next.js, PHP, Backend & Full Stack Development"}
@@ -348,7 +383,7 @@ function ProjectsSlider() {
                   window.open(projects[selectedProject].url, '_blank');
                 }
               }}
-              className="border-2 border-[#208975] text-[#208975] py-3 px-8 rounded-lg text-lg font-semibold hover:bg-[#208975] hover:text-white transition duration-300"
+              className="border-2 border-[#1E8975] text-[#1E8975] py-3 px-8 rounded-lg text-lg font-semibold hover:bg-[#1E8975] hover:text-white transition duration-300"
             >
               Visit Site
             </button>
@@ -398,15 +433,15 @@ function ProjectsSlider() {
               key={project.id}
               className={`cursor-pointer transition-all duration-300 rounded-2xl sm:rounded-3xl overflow-hidden relative group ${
                 selectedProject === index 
-                  ? 'transform scale-110 border-4 border-[#208975] shadow-xl shadow-[#208975]/50' 
-                  : 'border-2 border-gray-300 hover:border-[#208975] hover:scale-105 hover:shadow-lg hover:shadow-[#208975]/30'
+                  ? 'transform scale-110 border-4 border-[#1E8975] shadow-xl shadow-[#1E8975]/50' 
+                  : 'border-2 border-gray-300 hover:border-[#1E8975] hover:scale-105 hover:shadow-lg hover:shadow-[#1E8975]/30'
               }`}
               onClick={() => setSelectedProject(index)}
             >
               <div className="w-40 sm:w-48 h-24 sm:h-32 bg-white rounded-2xl sm:rounded-3xl shadow-md overflow-hidden relative">
                 {/* Hover Overlay */}
                 {selectedProject !== index && (
-                  <div className="absolute inset-0 bg-[#208975]/0 group-hover:bg-[#208975]/10 transition-all duration-300 rounded-2xl sm:rounded-3xl z-10"></div>
+                  <div className="absolute inset-0 bg-[#1E8975]/0 group-hover:bg-[#1E8975]/10 transition-all duration-300 rounded-2xl sm:rounded-3xl z-10"></div>
                 )}
                 {project.type === 'wholesale' ? (
                   <img 
@@ -436,7 +471,7 @@ function ProjectsSlider() {
                     </div>
               {/* Active Indicator */}
               {selectedProject === index && (
-                <div className="absolute -top-2 -right-2 w-6 h-6 bg-[#208975] rounded-full border-2 border-white flex items-center justify-center z-20">
+                <div className="absolute -top-2 -right-2 w-6 h-6 bg-[#1E8975] rounded-full border-2 border-white flex items-center justify-center z-20">
                   <div className="w-2 h-2 bg-white rounded-full"></div>
                   </div>
                 )}
@@ -485,7 +520,7 @@ function TestimonialsSection() {
   };
 
   return (
-    <section className="pt-10 sm:pt-16 lg:pt-20 pb-10 sm:pb-20 px-4 sm:px-8 bg-[#208975] rounded-t-[5rem] sm:rounded-t-[6rem] md:rounded-t-[7rem] lg:rounded-t-[8rem] xl:rounded-t-[10rem] 2xl:rounded-t-[12rem]">
+    <section className="pt-10 sm:pt-16 lg:pt-20 pb-10 sm:pb-20 px-4 sm:px-8 bg-[#1E8975] rounded-t-[5rem] sm:rounded-t-[6rem] md:rounded-t-[7rem] lg:rounded-t-[8rem] xl:rounded-t-[10rem] 2xl:rounded-t-[12rem]">
       <div className="max-w-7xl mx-auto">
         <div className="flex flex-col lg:grid lg:grid-cols-2 gap-8 lg:gap-16 items-center">
           {/* Left Side - Title and Main Quote */}
@@ -507,21 +542,21 @@ function TestimonialsSection() {
               {/* Navigation Arrows - Hidden on mobile */}
               <button
                 onClick={prevTestimonial}
-                className="hidden lg:flex absolute -left-16 top-1/2 transform -translate-y-1/2 w-12 h-12 bg-transparent border-2 border-white rounded-full items-center justify-center text-white hover:text-[#208975] hover:bg-white transition duration-300 z-10"
+                className="hidden lg:flex absolute -left-16 top-1/2 transform -translate-y-1/2 w-12 h-12 bg-transparent border-2 border-white rounded-full items-center justify-center text-white hover:text-[#1E8975] hover:bg-white transition duration-300 z-10"
               >
                 <FaChevronLeft className="text-lg" />
               </button>
               
               <button
                 onClick={nextTestimonial}
-                className="hidden lg:flex absolute -right-16 top-1/2 transform -translate-y-1/2 w-12 h-12 bg-transparent border-2 border-white rounded-full items-center justify-center text-white hover:text-[#208975] hover:bg-white transition duration-300 z-10"
+                className="hidden lg:flex absolute -right-16 top-1/2 transform -translate-y-1/2 w-12 h-12 bg-transparent border-2 border-white rounded-full items-center justify-center text-white hover:text-[#1E8975] hover:bg-white transition duration-300 z-10"
               >
                 <FaChevronRight className="text-lg" />
               </button>
 
               {/* Testimonial Card */}
               <div className="bg-white rounded-3xl sm:rounded-[2rem] lg:rounded-[2.5rem] p-6 sm:p-8 lg:p-10 shadow-xl max-w-md">
-                <div className="text-5xl sm:text-6xl lg:text-7xl text-[#208975] mb-4 font-serif">"</div>
+                <div className="text-5xl sm:text-6xl lg:text-7xl text-[#1E8975] mb-4 font-serif">"</div>
                 <p className="text-[#07191B] text-base sm:text-lg leading-relaxed mb-6 sm:mb-8">
                   {testimonials[currentTestimonial].quote}
                 </p>
@@ -593,10 +628,10 @@ function FAQsSection() {
   };
 
   return (
-    <section className="py-10 sm:py-20 px-4 sm:px-8 bg-white">
+    <section className="py-10 sm:py-20 px-4 sm:px-8 bg-white" id='faqs'>
       <div className="max-w-7xl mx-auto">
         {/* Section Title */}
-        <h2 className="text-3xl sm:text-4xl lg:text-6xl font-bold text-[#208975] text-center mb-8 sm:mb-16 font-serif">
+        <h2 className="text-3xl sm:text-4xl lg:text-6xl font-bold text-[#1E8975] text-center mb-8 sm:mb-16 font-serif">
           FAQs
         </h2>
 
@@ -611,14 +646,14 @@ function FAQsSection() {
                   className="w-full p-4 sm:p-6 text-left flex justify-between items-center hover:bg-teal-100 transition-all duration-300"
                 >
                   <div className="flex items-center gap-2 sm:gap-4 flex-1 min-w-0">
-                    <span className="text-[#208975] font-bold text-sm sm:text-lg flex-shrink-0">
+                    <span className="text-[#1E8975] font-bold text-sm sm:text-lg flex-shrink-0">
                       Que{index + 1}.
                     </span>
                     <span className="text-[#07191B] font-medium text-sm sm:text-lg break-words">
                       {faq.question}
                     </span>
                   </div>
-                  <div className={`text-[#208975] text-xl sm:text-2xl font-bold flex-shrink-0 ml-2 transition-transform duration-300 ${expandedFAQ === faq.id ? 'rotate-180' : ''}`}>
+                  <div className={`text-[#1E8975] text-xl sm:text-2xl font-bold flex-shrink-0 ml-2 transition-transform duration-300 ${expandedFAQ === faq.id ? 'rotate-180' : ''}`}>
                     {expandedFAQ === faq.id ? '−' : '+'}
                   </div>
                 </button>
@@ -791,7 +826,7 @@ function ContactSection() {
     <section className="py-10 sm:py-20 px-4 sm:px-8 bg-white">
       <div className="max-w-7xl mx-auto">
         {/* Section Title */}
-        <h2 className="text-3xl sm:text-4xl lg:text-6xl font-bold text-[#208975] text-center mb-8 sm:mb-16 font-serif">
+        <h2 className="text-3xl sm:text-4xl lg:text-6xl font-bold text-[#1E8975] text-center mb-8 sm:mb-16 font-serif">
           Contact Us
         </h2>
 
@@ -809,7 +844,7 @@ function ContactSection() {
                   onChange={handleInputChange}
                   required
                   style={{ backgroundColor: '#208975' }}
-                  className="flex-1 !bg-[#208975] text-white placeholder-white px-4 sm:px-6 py-3 sm:py-4 rounded-xl sm:rounded-2xl border-none focus:outline-none focus:ring-2 focus:ring-[#208975] text-sm sm:text-base"
+                  className="flex-1 !bg-[#1E8975] text-white placeholder-white px-4 sm:px-6 py-3 sm:py-4 rounded-xl sm:rounded-2xl border-none focus:outline-none focus:ring-2 focus:ring-[#1E8975] text-sm sm:text-base"
                 />
                 <div className="flex-1">
                 <input
@@ -821,7 +856,7 @@ function ContactSection() {
                     required
                     maxLength="10"
                     style={{ backgroundColor: phoneError ? '#dc2626' : '#208975' }}
-                    className={`w-full text-white placeholder-white px-4 sm:px-6 py-3 sm:py-4 rounded-xl sm:rounded-2xl border-2 ${phoneError ? '!bg-red-600 border-red-500' : '!bg-[#208975] border-none'} focus:outline-none focus:ring-2 ${phoneError ? 'focus:ring-red-500' : 'focus:ring-[#208975]'} text-sm sm:text-base font-serif tracking-wide transition-colors`}
+                    className={`w-full text-white placeholder-white px-4 sm:px-6 py-3 sm:py-4 rounded-xl sm:rounded-2xl border-2 ${phoneError ? '!bg-red-600 border-red-500' : '!bg-[#1E8975] border-none'} focus:outline-none focus:ring-2 ${phoneError ? 'focus:ring-red-500' : 'focus:ring-[#1E8975]'} text-sm sm:text-base font-serif tracking-wide transition-colors`}
                   />
                   {phoneError && (
                     <p className="text-red-500 text-xs sm:text-sm mt-1 px-2 font-medium">
@@ -840,7 +875,7 @@ function ContactSection() {
                 onChange={handleInputChange}
                 required
                 style={{ backgroundColor: '#208975' }}
-                className="w-full !bg-[#208975] text-white placeholder-white px-4 sm:px-6 py-3 sm:py-4 rounded-xl sm:rounded-2xl border-none focus:outline-none focus:ring-2 focus:ring-[#208975] text-sm sm:text-base"
+                className="w-full !bg-[#1E8975] text-white placeholder-white px-4 sm:px-6 py-3 sm:py-4 rounded-xl sm:rounded-2xl border-none focus:outline-none focus:ring-2 focus:ring-[#1E8975] text-sm sm:text-base"
               />
 
               {/* Message Field */}
@@ -852,14 +887,14 @@ function ContactSection() {
                 rows={4}
                 required
                 style={{ backgroundColor: '#208975' }}
-                className="w-full !bg-[#208975] text-white placeholder-white px-4 sm:px-6 py-3 sm:py-4 rounded-xl sm:rounded-2xl border-none focus:outline-none focus:ring-2 focus:ring-[#208975] resize-none text-sm sm:text-base"
+                className="w-full !bg-[#1E8975] text-white placeholder-white px-4 sm:px-6 py-3 sm:py-4 rounded-xl sm:rounded-2xl border-none focus:outline-none focus:ring-2 focus:ring-[#1E8975] resize-none text-sm sm:text-base"
               />
 
               {/* Submit Button */}
               <button
                 type="submit"
                 disabled={isSubmitting}
-                className="bg-white border-2 border-[#208975] text-[#208975] px-6 sm:px-8 py-3 sm:py-4 rounded-xl sm:rounded-2xl font-semibold hover:bg-[#208975] hover:text-white transition duration-300 text-sm sm:text-base disabled:opacity-50 disabled:cursor-not-allowed"
+                className="bg-white border-2 border-[#1E8975] text-[#1E8975] px-6 sm:px-8 py-3 sm:py-4 rounded-xl sm:rounded-2xl font-semibold hover:bg-[#1E8975] hover:text-white transition duration-300 text-sm sm:text-base disabled:opacity-50 disabled:cursor-not-allowed"
               >
                 {isSubmitting ? 'Sending...' : 'Submit'}
               </button>
@@ -870,19 +905,19 @@ function ContactSection() {
               <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4">
                 <div className="bg-white rounded-2xl sm:rounded-3xl p-6 sm:p-8 lg:p-10 max-w-md w-full text-center shadow-2xl transform transition-all duration-300 scale-100">
                   <div className="mb-4">
-                    <div className="w-16 h-16 sm:w-20 sm:h-20 bg-[#208975] rounded-full flex items-center justify-center mx-auto mb-4">
+                    <div className="w-16 h-16 sm:w-20 sm:h-20 bg-[#1E8975] rounded-full flex items-center justify-center mx-auto mb-4">
                       <svg className="w-8 h-8 sm:w-10 sm:h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                       </svg>
                     </div>
-                    <h3 className="text-2xl sm:text-3xl font-bold text-[#208975] mb-2">Success!</h3>
+                    <h3 className="text-2xl sm:text-3xl font-bold text-[#1E8975] mb-2">Success!</h3>
                     <p className="text-lg sm:text-xl text-gray-700">
                       Your message has been sent successfully!
                     </p>
                   </div>
                   <button
                     onClick={() => setShowSuccessPopup(false)}
-                    className="mt-4 bg-[#208975] text-white px-6 sm:px-8 py-2 sm:py-3 rounded-lg sm:rounded-xl font-semibold hover:bg-opacity-90 transition duration-300"
+                    className="mt-4 bg-[#1E8975] text-white px-6 sm:px-8 py-2 sm:py-3 rounded-lg sm:rounded-xl font-semibold hover:bg-opacity-90 transition duration-300"
                   >
                     Close
                   </button>
@@ -902,19 +937,19 @@ function ContactSection() {
               </div>
 
               {/* Phone Number */}
-              <div className="bg-[#208975] text-white px-4 sm:px-6 py-3 sm:py-4 rounded-xl sm:rounded-2xl flex items-center gap-3 sm:gap-4">
+              <div className="bg-[#1E8975] text-white px-4 sm:px-6 py-3 sm:py-4 rounded-xl sm:rounded-2xl flex items-center gap-3 sm:gap-4">
                 <FaPhone className="text-lg sm:text-xl" />
                 <span className="text-base sm:text-lg font-serif tracking-wide">+91 9144716600 , +91 7378852436</span>
               </div>
 
               {/* Email Address */}
-              <div className="bg-[#208975] text-white px-4 sm:px-6 py-3 sm:py-4 rounded-xl sm:rounded-2xl flex items-center gap-3 sm:gap-4">
+              <div className="bg-[#1E8975] text-white px-4 sm:px-6 py-3 sm:py-4 rounded-xl sm:rounded-2xl flex items-center gap-3 sm:gap-4">
                 <FaEnvelope className="text-lg sm:text-xl" />
                 <span className="text-base sm:text-lg">webbiezinfotech@gmail.com</span>
               </div>
 
               {/* Location */}
-              <div className="bg-[#208975] text-white px-4 sm:px-6 py-3 sm:py-4 rounded-xl sm:rounded-2xl flex items-center gap-3 sm:gap-4">
+              <div className="bg-[#1E8975] text-white px-4 sm:px-6 py-3 sm:py-4 rounded-xl sm:rounded-2xl flex items-center gap-3 sm:gap-4">
                 <FaMapMarkerAlt className="text-lg sm:text-xl" />
                 <span className="text-base sm:text-lg">Jabalpur, Madhya Pradesh</span>
               </div>
@@ -929,7 +964,7 @@ function ContactSection() {
 // Footer Section Component
 function FooterSection() {
   return (
-    <footer className="bg-[#208975] text-white">
+    <footer className="bg-[#1E8975] text-white">
       {/* Main Footer Content */}
       <div className="max-w-7xl mx-auto px-4 sm:px-8 py-10 sm:py-12 lg:py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-10 lg:gap-12">
@@ -991,7 +1026,7 @@ function FooterSection() {
               <a href="#" className="text-white hover:text-white/80 transition duration-300">
                 <FaInstagram className="text-3xl sm:text-4xl lg:text-5xl" />
               </a>
-              <a href="#" className="text-white hover:text-white/80 transition duration-300">
+              <a href="https://www.linkedin.com/company/webbiez-infotech/about/?viewAsMember=true" className="text-white hover:text-white/80 transition duration-300">
                 <FaLinkedin className="text-3xl sm:text-4xl lg:text-5xl" />
               </a>
             </div>
