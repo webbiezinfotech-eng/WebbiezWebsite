@@ -13,7 +13,7 @@ import brandingImage from './assets/images/Rectangle 34625783-3.png'
 import ecommerceImage from './assets/images/Rectangle 34625783-4.png'
 import prImage from './assets/images/Rectangle 34625783-5.png'
 import wilogo from './assets/wilogo.jpg'
-
+import footerlogo from './assets/logo.png'
 const App = () => {
   const [searchQuery, setSearchQuery] = useState("");
 
@@ -43,18 +43,18 @@ const handleSearch = () => {
 };
 
   return (
-    <div className="  " id='home'>
+    <div className="bg-[#1E8975] overflow-x-hidden ">
       {/* Hero Section */}
-      <div className="min-h-screen bg-white md:flex justify-center relative md:gap-5 items-center">
+      <div className="min-h-screen bg-white lg:flex justify-center relative items-center px-2 sm:px-5 lg:px-5" id='home'>
       {/* Social Media Sidebar - Fixed Left */}
-      <div className=" flex flex-col gap-3 md:gap-10 p-2 md:py-10  h-fit bg-[#07191B] rounded-full items-center ">
+      <div className=" flex lg:flex-col justify-between m-2 gap-3 lg:gap-10 px-2 lg:py-10 h-fit bg-[#07191B] rounded-full items-center ">
         <a 
           href="https://www.linkedin.com/company/webbiez-infotech/about/?viewAsMember=true" 
           target="_blank" 
           rel="noopener noreferrer"
           className=" w-16 h-16 lg:w-20 lg:h-20  rounded-full flex items-center justify-center text-white cursor-pointer transition-all duration-300 hover:scale-110 hover:bg-[#0077B5] hover:shadow-lg hover:shadow-[#0077B5]/50"
         >
-          <FaLinkedin className="w-7 h-7 md:w-12 md:h-12 lg:w-12 lg:h-12" />
+          <FaLinkedin className="w-12 h-12 sm:w-12 sm:h-12 lg:w-12 lg:h-12" />
         </a>
         <a 
           href="https://wa.me/918225807724" 
@@ -62,13 +62,13 @@ const handleSearch = () => {
           rel="noopener noreferrer"
           className=" w-16 h-16 lg:w-20 lg:h-20  rounded-full flex items-center justify-center text-white cursor-pointer transition-all duration-300 hover:scale-110 hover:bg-[#25D366] hover:shadow-lg hover:shadow-[#25D366]/50"
         >
-          <FaWhatsapp className="w-7 h-7 md:w-12 md:h-12 lg:w-12 lg:h-12" />
+          <FaWhatsapp className="w-12 h-12 sm:w-12 sm:h-12 lg:w-12 lg:h-12" />
         </a>
         <a 
           href="mailto:webbiezinfotech@gmail.com" 
           className=" w-16 h-16 lg:w-20 lg:h-20  rounded-full flex items-center justify-center text-white cursor-pointer transition-all duration-300 hover:scale-110 hover:bg-[#EA4335] hover:shadow-lg hover:shadow-[#EA4335]/50"
         >
-          <FaEnvelope className="w-7 h-7 md:w-12 md:h-12 lg:w-12 lg:h-12" />
+          <FaEnvelope className="w-12 h-12 sm:w-12 sm:h-12 lg:w-12 lg:h-12" />
         </a>
         <a 
           href="#" 
@@ -76,34 +76,34 @@ const handleSearch = () => {
           rel="noopener noreferrer"
           className=" w-16 h-16 lg:w-20 lg:h-20 rounded-full flex items-center justify-center text-white cursor-pointer transition-all duration-300 hover:scale-110 hover:bg-gradient-to-r hover:from-[#833AB4] hover:via-[#FD1D1D] hover:to-[#FCB045] hover:shadow-lg hover:shadow-[#833AB4]/50"
         >
-          <FaInstagram className="w-7 h-7 md:w-12 md:h-12 lg:w-12 lg:h-12" />
+          <FaInstagram className="w-12 h-12 sm:w-12 sm:h-12 lg:w-12 lg:h-12" />
         </a>
-        <div className=" bg-[#1E8975] h-10 w-10 md:h-12 md:w-12 lg:w-16 lg:h-16  rounded-full flex items-center justify-center text-white font-bold text-xl md:text-2xl cursor-pointer transition-all duration-300 hover:scale-125 hover:bg-[#1E8975] hover:shadow-lg hover:shadow-[#1E8975]/50">
+        <div className=" bg-[#1E8975] h-12 w-12 lg:w-16 lg:h-16  rounded-full flex items-center justify-center text-white font-bold text-xl md:text-2xl cursor-pointer transition-all duration-300 hover:scale-125 hover:bg-[#1E8975] hover:shadow-lg hover:shadow-[#1E8975]/50">
           W
         </div>
       </div>
 
       {/* Main Container */}
-      <div className="max-w-7xl w-full relative">
+      <div className="max-w-7xl w-full md:relative">
         {/* Top Right - Search and Logo */}
-        <div className="absolute -top-5 right-20 z-20 bg-white rounded-3xl p-2">
-  <div className="bg-[#07191B] rounded-full p-2 shadow-lg inline-flex items-center gap-2">
+        <div className="lg:absolute lg:-top-5 lg:right-20 z-20 lg:bg-white rounded-3xl lg:p-2 text-end">
+  <div className="lg:bg-[#07191B] rounded-full p-2 lg:shadow-lg inline-flex items-center gap-2">
     
-    <button       onClick={handleSearch}
+    <button onClick={handleSearch}
       className="bg-[#1E8975] rounded-full px-6 py-3 flex items-center gap-2 text-white">
     <FaSearch className="w-5 h-5" />
     <input
       type="text"
-      placeholder="Search..."
+      placeholder="Search"
       value={searchQuery}
       onChange={(e) => setSearchQuery(e.target.value)}
       onKeyDown={(e) => e.key === "Enter" && handleSearch()}
-      className="py-2 rounded-full bg-[#1e8975] outline-none text-sm w-20 placeholder-white"
+      className="lg:py-2 rounded-full bg-[#1e8975] outline-none text-sm w-full lg:w-20 placeholder-white/80"
     />
     </button>
 
-    <div className="w-14 h-14 bg-[#1E8975] rounded-full flex items-center justify-center text-white font-bold text-2xl">
-      W
+    <div className=" lg:w-14 lg:h-14 bg-[#1E8975] rounded-full flex items-center justify-center text-white font-bold text-2xl">
+      <span className="hidden lg:block">W</span>
     </div>
 
   </div>
@@ -111,21 +111,21 @@ const handleSearch = () => {
 
 
         {/* Main Hero Card */}
-        <div className="bg-[#1E8975] rounded-[3rem] overflow-hidden relative h-[630px]">
+        <div className="bg-[#1E8975] flex flex-col lg:flex-row items-center lg:items-start justify-center lg:justify-start rounded-[3rem] overflow-hidden relative h-[700px] lg:h-[630px]">
           {/* Title Section */}
           <div className=" ">
-            <h1 className="ms-20 text-white font-bold leading-tight text-[100px] md:text-[130px] lg:text-[150px] ">
-              WEBBIEZ <br /><span className="m-40">INFOTECH</span>
+            <h1 className="lg:ms-5 text-center lg:text-start text-white font-bold leading-tight text-[44px] sm:text-[80px] lg:text-[100px] xl:text-[120px] mt-10 ">
+              WEBBIEZ <br /><span className="lg:ms-20">INFOTECH</span>
             </h1>
           </div>
 
           {/* Bottom Right Info Card */}
-          <div className="absolute -bottom-6 -right-5 w-2/5 p-5 bg-white rounded-3xl">
-            <div className="bg-slate-900 rounded-3xl p-8">
-              <h2 className="text-white text-2xl font-bold mb-4 leading-tight underline">
+          <div className="lg:absolute lg:-bottom-6 lg:-right-5 lg:w-2/5 lg:p-5 lg:bg-white rounded-3xl">
+            <div className="lg:bg-slate-900 text-white rounded-3xl p-8 text-center">
+              <h2 className=" text-3xl sm:text-4xl lg:text-2xl font-bold mb-4 leading-tight underline">
                 Innovating the Innovation
               </h2>
-              <p className="text-white leading-relaxed text-base">
+              <p className=" leading-relaxed text-lg sm:text-3xl lg:text-base">
                 At Webbiez Infotech, we don't just create technology—we create experiences. From powerful websites to stunning apps, our mission is to turn bold ideas into digital reality.
               </p>
             </div>
@@ -139,9 +139,9 @@ const handleSearch = () => {
 
     
       {/* About Us Section */}
-      <section className="py-10 sm:py-20 px-4 sm:px-8 bg-[#07191B]" id='about'>
+      <section className="py-10 sm:py-20 bg-[#07191B]" id='about'>
         {/* Top Line - 60% width from left to right */}
-        <div className="w-[60%] h-2 sm:h-3 lg:h-4 bg-white rounded-full mb-8 sm:mb-16"></div>
+        <div className="w-[60%] h-2 sm:h-3 bg-white rounded-full mb-8 sm:mb-16"></div>
         
         <div className="max-w-7xl mx-auto">
           {/* Section Title */}
@@ -155,14 +155,15 @@ const handleSearch = () => {
             {/* Right Side - Description */}
             <div className="flex md:w-[55%] text-center lg:text-left">
               <p className="text-white text-base sm:text-lg leading-relaxed font-serif">
-                Webbiez Infotech is a forward-thinking IT solutions company that builds modern, user-friendly, and creative digital platforms. We specialize in ReactJS websites, intuitive UI/UX designs, graphic design, mobile applications, and public relations strategies that help businesses stand out. With a blend of creativity and technology, we deliver solutions that not only look great but also perform flawlessly.
+              Webbiez Infotech is a modern IT solutions company specializing in ReactJS websites, UI/UX design, graphic design, mobile application development, and social media management. We help businesses build a strong digital presence through creative design, smart technology, and strategic execution.
+              <br /> <br /> In today’s AI-driven world, we focus on delivering secure, scalable, and performance-driven solutions that not only look great but also help brands grow, engage users, and stand out in the digital space.
               </p>
             </div>
           </div>
         </div>
         
         {/* Bottom Line - 60% width from right to left */}
-        <div className="w-[60%] h-2 sm:h-3 lg:h-4 bg-white rounded-full mt-8 sm:mt-16 ml-auto"></div>
+        <div className="w-[60%] h-2 sm:h-3 bg-white rounded-full mt-8 sm:mt-16 ml-auto"></div>
       </section>
 
       {/* Services Section */}
@@ -198,7 +199,7 @@ const handleSearch = () => {
               description="Boost your online presence with strategic SEO and digital marketing solutions."
               icon={<FaChartLine />}
               isExpanded={false}
-              backgroundImage="bg-purple-900"
+              backgroundImage="bg-[#07191B]"
               backgroundImageSrc={seoImage}
             />
             
@@ -208,7 +209,7 @@ const handleSearch = () => {
               description="Create memorable brand identities that stand out in the market."
               icon={<FaBullseye />}
               isExpanded={false}
-              backgroundImage="bg-gray-400"
+              backgroundImage="bg-[#07191B]"
               backgroundImageSrc={brandingImage}
             />
             
@@ -228,7 +229,7 @@ const handleSearch = () => {
               description="Strategic communication and public relations to build your brand reputation."
               icon={<FaUsers />}
               isExpanded={false}
-              backgroundImage="bg-purple-900"
+              backgroundImage="bg-[#07191B]"
               backgroundImageSrc={prImage}
             />
           </div>
@@ -236,14 +237,14 @@ const handleSearch = () => {
       </section>
 
       {/* Projects Section */}
-      <section className="-mt-16 sm:-mt-20 lg:-mt-24 xl:-mt-28 2xl:-mt-32 pt-12 sm:pt-16 lg:pt-20 xl:pt-24 pb-10 sm:pb-20 px-4 sm:px-8 bg-white rounded-t-[5rem] sm:rounded-t-[6rem] md:rounded-t-[7rem] lg:rounded-t-[8rem] xl:rounded-t-[10rem] 2xl:rounded-t-[12rem] rounded-b-[5rem] sm:rounded-b-[6rem] md:rounded-b-[7rem] lg:rounded-b-[8rem] xl:rounded-b-[10rem] 2xl:rounded-b-[12rem] relative z-10 mb-0" id='projects'>
-        <div className="max-w-[98%] sm:max-w-[95%] lg:max-w-[92%] xl:max-w-[90%] 2xl:max-w-[88%] mx-auto w-full">
+      <section className=" py-10 px-4 sm:py-16 md:py-20 bg-white rounded-[3rem] sm:rounded-[4rem] md:rounded-[5rem] lg:rounded-[6rem] xl:rounded-[7rem] 2xl:rounded-[8rem] relative z-10 mb-0" id='projects'>
+        <div className="max-w-[90%]  mx-auto w-full">
           {/* Section Title and Description */}
           <div className="text-center mb-10 sm:mb-16 lg:mb-20">
             <h2 className="text-3xl sm:text-4xl lg:text-6xl font-bold text-[#07191B] mb-4 sm:mb-6">
               Projects We've <span className="text-[#1E8975]">Worked on</span>
             </h2>
-            <p className="text-base sm:text-lg text-[#07191B] max-w-4xl mx-auto leading-relaxed">
+            <p className="text-base sm:text-lg text-[#07191B] max-w-5xl mx-auto leading-relaxed">
               We've worked on diverse projects ranging from responsive websites to complex business portals. Our solutions integrate ReactJS, PHP, Node.js, Flutter, Figma, and modern UI tools to ensure scalability, design precision, and high performance.
             </p>
           </div>
@@ -302,9 +303,9 @@ function ServiceCard({ title, description, icon, isExpanded, backgroundImage, ba
         <div className="relative z-10 h-full flex flex-col justify-between p-6 sm:p-8 lg:p-10">
           {isExpanded || isHovered ? (
             // Expanded State
-            <div className={`${textColor} flex flex-col justify-center space-y-6 sm:space-y-8`}>
+            <div className={`${textColor}  flex flex-col justify-center space-y-6 sm:space-y-8`}>
               <div className="text-4xl sm:text-5xl lg:text-6xl">{icon}</div>
-              <h3 className="text-3xl sm:text-4xl lg:text-5xl font-bold">{title}</h3>
+              <h3 className="text-3xl font-bold">{title}</h3>
               <p className="text-lg sm:text-xl lg:text-2xl leading-relaxed">{description}</p>
             </div>
           ) : (
@@ -359,18 +360,18 @@ function ProjectsSlider() {
   return (
     <div className="space-y-8">
       {/* Main Project Display */}
-      <div className="flex flex-col lg:flex-row gap-8">
+      <div className="flex flex-col-reverse lg:flex-row items-center justify-center gap-8">
           {/* Project Details Card */}
           <div className="w-full lg:w-1/2 bg-white rounded-2xl sm:rounded-3xl border border-gray-200 p-6 sm:p-8 shadow-lg max-h-[500px] sm:max-h-[600px] overflow-y-auto">
-            <h3 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-[#1E8975] mb-5">
+            <h3 className="text-2xl sm:text-3xl font-bold text-[#1E8975] mb-5">
               {projects[selectedProject].title}
             </h3>
-            <p className="text-[#07191B] mb-6 leading-relaxed text-lg sm:text-xl">
+            <p className="text-[#07191B] mb-6 leading-relaxed text-lg ">
               {projects[selectedProject].description}
             </p>
             <div className="mb-7">
               <h4 className="text-lg sm:text-xl font-bold text-[#1E8975] mb-3">Technologies Used:-</h4>
-              <p className="text-[#07191B] text-lg sm:text-xl">
+              <p className="text-[#07191B] text-lg">
                 {projects[selectedProject].type === 'wholesale' && "React.js, PHP, Admin Panel & Backend Integration"}
                 {projects[selectedProject].type === 'portfolio' && "Next.js, PHP, Backend & Full Stack Development"}
                 {projects[selectedProject].type === 'financial' && "React.js, PHP, Animations & Graphics"}
@@ -520,14 +521,13 @@ function TestimonialsSection() {
   };
 
   return (
-    <section className="pt-10 sm:pt-16 lg:pt-20 pb-10 sm:pb-20 px-4 sm:px-8 bg-[#1E8975] rounded-t-[5rem] sm:rounded-t-[6rem] md:rounded-t-[7rem] lg:rounded-t-[8rem] xl:rounded-t-[10rem] 2xl:rounded-t-[12rem]">
+    <section className="pt-10 sm:pt-16 lg:pt-20 pb-10 sm:pb-20 px-4 sm:px-8 ">
       <div className="max-w-7xl mx-auto">
         <div className="flex flex-col lg:grid lg:grid-cols-2 gap-8 lg:gap-16 items-center">
           {/* Left Side - Title and Main Quote */}
           <div className="text-center lg:text-left">
             <h2 className="text-3xl sm:text-4xl lg:text-6xl font-bold text-white font-serif mb-6 sm:mb-8">
-              What Our Clients <br />
-              <span className="text-teal-200">Says</span>
+              What Our Clients Says
             </h2>
             <div className="text-lg sm:text-xl lg:text-2xl text-white font-serif italic leading-relaxed">
               <span className="text-4xl sm:text-5xl lg:text-7xl inline-block mr-2">"</span>
@@ -537,25 +537,25 @@ function TestimonialsSection() {
           </div>
 
           {/* Right Side - Testimonial Card */}
-          <div className="flex justify-center items-center">
-            <div className="relative">
-              {/* Navigation Arrows - Hidden on mobile */}
+          <div className="flex flex-col justify-center items-center w-full">
+            <div className="relative w-full flex flex-col items-center">
+              {/* Navigation Arrows - Desktop: Side, Mobile: Below */}
               <button
                 onClick={prevTestimonial}
-                className="hidden lg:flex absolute -left-16 top-1/2 transform -translate-y-1/2 w-12 h-12 bg-transparent border-2 border-white rounded-full items-center justify-center text-white hover:text-[#1E8975] hover:bg-white transition duration-300 z-10"
+                className="hidden lg:flex absolute -left-8 top-1/2 transform -translate-y-1/2 w-12 h-12 bg-transparent border-2 border-white rounded-full items-center justify-center text-white hover:text-[#1E8975] hover:bg-white transition duration-300 z-10"
               >
                 <FaChevronLeft className="text-lg" />
               </button>
               
               <button
                 onClick={nextTestimonial}
-                className="hidden lg:flex absolute -right-16 top-1/2 transform -translate-y-1/2 w-12 h-12 bg-transparent border-2 border-white rounded-full items-center justify-center text-white hover:text-[#1E8975] hover:bg-white transition duration-300 z-10"
+                className="hidden lg:flex absolute -right-8 top-1/2 transform -translate-y-1/2 w-12 h-12 bg-transparent border-2 border-white rounded-full items-center justify-center text-white hover:text-[#1E8975] hover:bg-white transition duration-300 z-10"
               >
                 <FaChevronRight className="text-lg" />
               </button>
 
               {/* Testimonial Card */}
-              <div className="bg-white rounded-3xl sm:rounded-[2rem] lg:rounded-[2.5rem] p-6 sm:p-8 lg:p-10 shadow-xl max-w-md">
+              <div className="bg-white rounded-3xl sm:rounded-[2rem] lg:rounded-[2.5rem] p-6 sm:p-8 lg:p-10 shadow-xl max-w-md w-full">
                 <div className="text-5xl sm:text-6xl lg:text-7xl text-[#1E8975] mb-4 font-serif">"</div>
                 <p className="text-[#07191B] text-base sm:text-lg leading-relaxed mb-6 sm:mb-8">
                   {testimonials[currentTestimonial].quote}
@@ -577,6 +577,23 @@ function TestimonialsSection() {
                     </div>
                   </div>
                 </div>
+              </div>
+
+              {/* Mobile Navigation Buttons - Below Card */}
+              <div className="flex lg:hidden gap-4 mt-6">
+                <button
+                  onClick={prevTestimonial}
+                  className="w-12 h-12 bg-[#1E8975] border-2 border-white rounded-full flex items-center justify-center text-white hover:bg-white hover:text-[#1E8975] transition duration-300 shadow-lg"
+                >
+                  <FaChevronLeft className="text-lg" />
+                </button>
+                
+                <button
+                  onClick={nextTestimonial}
+                  className="w-12 h-12 bg-[#1E8975] border-2 border-white rounded-full flex items-center justify-center text-white hover:bg-white hover:text-[#1E8975] transition duration-300 shadow-lg"
+                >
+                  <FaChevronRight className="text-lg" />
+                </button>
               </div>
             </div>
           </div>
@@ -966,37 +983,22 @@ function FooterSection() {
   return (
     <footer className="bg-[#1E8975] text-white">
       {/* Main Footer Content */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-8 py-10 sm:py-12 lg:py-16">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-10 lg:gap-12">
-          {/* Company Info Column - Wider */}
-          <div className="lg:col-span-1 space-y-4 sm:space-y-5">
-            <div className="flex items-center gap-3 sm:gap-4">
+      <div className="max-w-[90%] mx-auto px-4 sm:px-8 py-10 sm:py-12 lg:py-16">
+        <div className="flex flex-col md:flex-row  gap-10 justify-between items-start  ">
+          {/* Company Info Column */}
+            <div className="flex flex-col items-start  md:max-w-[50%] gap-3 sm:gap-4">
               {/* Logo */}
               <div className="relative flex-shrink-0">
-                <div className="w-14 h-14 sm:w-16 sm:h-16 lg:w-18 lg:h-18 bg-white/10 rounded-lg flex items-center justify-center relative">
-                  <span className="text-white font-bold text-xl sm:text-2xl lg:text-3xl font-serif">W</span>
-                  {/* Hexagonal shapes around logo */}
-                  <div className="absolute -top-1 -right-1 w-3 h-3 bg-white opacity-60 transform rotate-45"></div>
-                  <div className="absolute -bottom-1 -left-1 w-2 h-2 bg-white opacity-80 transform rotate-45"></div>
-                  <div className="absolute top-1/2 -left-1 w-2 h-2 bg-white opacity-40 transform rotate-45"></div>
-                  <div className="absolute top-1/2 -right-1 w-2 h-2 bg-white opacity-70 transform rotate-45"></div>
-                </div>
+                <img src={footerlogo} alt="Webbiez Infotech Logo" className="w-auto h-auto" />
               </div>
-              <div>
-                {/* <h3 className="text-xl sm:text-2xl lg:text-3xl font-bold text-white font-serif">wwWebbiez iiinfotech</h3> */}
-                <p className="text-white/90 text-sm sm:text-base lg:text-lg font-serif mt-1">Innovating the Innovation</p>
-              </div>
-            </div>
             <p className="text-white/90 text-base sm:text-lg lg:text-xl leading-relaxed font-serif">
               Webbiez Infotech – Crafting digital experiences with creativity and technology. Let's build the future, one innovation at a time.
             </p>
-            <p className="text-white/80 text-sm sm:text-base lg:text-lg font-serif">
-              WebbiezInfotech @2025, all rights reserved
-            </p>
-          </div>
+            </div>
 
-          {/* Pages Column */}
-          <div className="space-y-4 sm:space-y-5">
+         <div className="flex flex-wrap justify-between items-start gap-4 md:gap-10 lg:gap-16 xl:gap-20 2xl:gap-24">
+           {/* Pages Column */}
+           <div className="  space-y-4 sm:space-y-5 ">
             <h4 className="text-lg sm:text-xl lg:text-2xl font-bold text-white font-serif">Pages</h4>
             <ul className="space-y-2 sm:space-y-3">
               <li><a href="#" className="text-white/90 hover:text-white transition duration-300 text-base sm:text-lg lg:text-xl font-serif">Home</a></li>
@@ -1007,7 +1009,7 @@ function FooterSection() {
           </div>
 
           {/* Queries Column */}
-          <div className="space-y-4 sm:space-y-5">
+          <div className="flex-1 min-w-[150px] space-y-4 sm:space-y-5">
             <h4 className="text-lg sm:text-xl lg:text-2xl font-bold text-white font-serif">Queries</h4>
             <ul className="space-y-2 sm:space-y-3">
               <li><a href="#" className="text-white/90 hover:text-white transition duration-300 text-base sm:text-lg lg:text-xl font-serif">Testimonials</a></li>
@@ -1017,25 +1019,29 @@ function FooterSection() {
           </div>
 
           {/* Social Media Column */}
-          <div className="space-y-4 sm:space-y-5">
+          <div className="flex-1 min-w-[150px] space-y-4 sm:space-y-5">
             <h4 className="text-lg sm:text-xl lg:text-2xl font-bold text-white font-serif">Social Media</h4>
             <div className="flex gap-4 sm:gap-5">
-              <a href="#" className="text-white hover:text-white/80 transition duration-300">
+              <a href="https://wa.me/918225807724" className="text-white hover:text-white/80 transition duration-300">
                 <FaWhatsapp className="text-3xl sm:text-4xl lg:text-5xl" />
               </a>
-              <a href="#" className="text-white hover:text-white/80 transition duration-300">
+              <a href="https://www.instagram.com/webbiez_infotech/" className="text-white hover:text-white/80 transition duration-300">
                 <FaInstagram className="text-3xl sm:text-4xl lg:text-5xl" />
               </a>
               <a href="https://www.linkedin.com/company/webbiez-infotech/about/?viewAsMember=true" className="text-white hover:text-white/80 transition duration-300">
                 <FaLinkedin className="text-3xl sm:text-4xl lg:text-5xl" />
               </a>
             </div>
-            <div className="pt-4">
-              <a href="#" className="text-white/90 hover:text-white transition duration-300 text-base sm:text-lg lg:text-xl font-serif">
-              Privacy Policy
-            </a>
-            </div>
+           
           </div>
+         </div>
+        </div>
+        
+        {/* Copyright Line */}
+        <div className="mt-8 sm:mt-12 lg:mt-16 pt-6 sm:pt-8 border-t border-white/20">
+          <p className="text-white/80 text-sm sm:text-base lg:text-lg font-serif text-center">
+            WebbiezInfotech @2025, all rights reserved
+          </p>
         </div>
       </div>
     </footer>
