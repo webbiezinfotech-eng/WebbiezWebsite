@@ -1,4 +1,6 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
+import AOS from 'aos'
+import 'aos/dist/aos.css'
 import { FaLinkedin, FaWhatsapp, FaEnvelope, FaInstagram, FaDesktop, FaCircle, FaCode, FaChartLine, FaBullseye, FaShoppingCart, FaUsers, FaPalette, FaMobile, FaChevronLeft, FaChevronRight, FaPhone, FaMapMarkerAlt, FaSearch } from 'react-icons/fa'
 import uiuxImage from './assets/images/WhatsApp Image 2025-12-15 at 3.12.41 PM.jpeg'
 import financialImage from './assets/images/Screenshot 2025-12-15 at 16.07.58.png'
@@ -14,8 +16,26 @@ import ecommerceImage from './assets/images/Rectangle 34625783-4.png'
 import prImage from './assets/images/Rectangle 34625783-5.png'
 import wilogo from './assets/wilogo.jpg'
 import footerlogo from './assets/logo.png'
+import './App.css'
 const App = () => {
   const [searchQuery, setSearchQuery] = useState("");
+
+  useEffect(() => {
+    AOS.init({
+      duration: 800,
+      easing: 'ease-out-cubic',
+      once: false,
+      mirror: true,
+      offset: 50,
+      delay: 0,
+      disable: false,
+      startEvent: 'DOMContentLoaded',
+      useClassNames: false,
+      disableMutationObserver: false,
+      debounceDelay: 50,
+      throttleDelay: 99
+    });
+  }, []);
 
 const handleSearch = () => {
   if (!searchQuery.trim()) return;
@@ -47,7 +67,7 @@ const handleSearch = () => {
       {/* Hero Section */}
       <div className="min-h-screen bg-white lg:flex justify-center relative items-center px-2 sm:px-5 lg:px-5" id='home'>
       {/* Social Media Sidebar - Fixed Left */}
-      <div className=" flex lg:flex-col justify-between m-2 gap-3 lg:gap-10 px-2 lg:py-10 h-fit bg-[#07191B] rounded-full items-center ">
+      <div className=" flex lg:flex-col justify-between m-2 gap-3 lg:gap-10 px-2 lg:py-10 h-fit bg-[#07191B] rounded-full items-center " data-aos="fade-right">
         <a 
           href="https://www.linkedin.com/company/webbiez-infotech/about/?viewAsMember=true" 
           target="_blank" 
@@ -86,7 +106,7 @@ const handleSearch = () => {
       {/* Main Container */}
       <div className="max-w-7xl w-full md:relative">
         {/* Top Right - Search and Logo */}
-        <div className="lg:absolute lg:-top-5 lg:right-20 z-20 lg:bg-white rounded-3xl lg:p-2 text-end">
+        <div className="lg:absolute lg:-top-5 lg:right-20 z-20 lg:bg-white rounded-3xl lg:p-2 text-end" data-aos="fade-left" data-aos-delay="200">
   <div className="lg:bg-[#07191B] rounded-full p-2 lg:shadow-lg inline-flex items-center gap-2">
     
     <button onClick={handleSearch}
@@ -113,14 +133,14 @@ const handleSearch = () => {
         {/* Main Hero Card */}
         <div className="bg-[#1E8975] flex flex-col lg:flex-row items-center lg:items-start justify-center lg:justify-start rounded-[3rem] overflow-hidden relative h-[700px] lg:h-[630px]">
           {/* Title Section */}
-          <div className=" ">
+          <div className=" " data-aos="fade-up" data-aos-delay="300">
             <h1 className="lg:ms-5 text-center lg:text-start text-white font-bold leading-tight text-[44px] sm:text-[80px] lg:text-[100px] xl:text-[120px] mt-10 ">
               WEBBIEZ <br /><span className="lg:ms-20">INFOTECH</span>
             </h1>
           </div>
 
           {/* Bottom Right Info Card */}
-          <div className="lg:absolute lg:-bottom-6 lg:-right-5 lg:w-2/5 lg:p-5 lg:bg-white rounded-3xl">
+          <div className="lg:absolute lg:-bottom-6 lg:-right-5 lg:w-2/5 lg:p-5 lg:bg-white rounded-3xl" data-aos="fade-up-left" data-aos-delay="400">
             <div className="lg:bg-slate-900 text-white rounded-3xl p-8 text-center">
               <h2 className=" text-3xl sm:text-4xl lg:text-2xl font-bold mb-4 leading-tight underline">
                 Innovating the Innovation
@@ -141,19 +161,19 @@ const handleSearch = () => {
       {/* About Us Section */}
       <section className="py-10 sm:py-20 bg-[#07191B]" id='about'>
         {/* Top Line - 60% width from left to right */}
-        <div className="w-[60%] h-2 sm:h-3 bg-white rounded-full mb-8 sm:mb-16"></div>
+        <div className="w-[60%] h-2 sm:h-3 bg-white rounded-full mb-8 sm:mb-16" data-aos="fade-right"></div>
         
         <div className="max-w-7xl mx-auto">
           {/* Section Title */}
-          <h2 className="text-3xl sm:text-4xl lg:text-6xl font-bold text-white text-center mb-8 sm:mb-16">Who We Are</h2>
+          <h2 className="text-3xl sm:text-4xl lg:text-6xl font-bold text-white text-center mb-8 sm:mb-16" data-aos="fade-up">Who We Are</h2>
           
           {/* Main Content */}
           <div className="flex flex-col lg:flex-row items-center justify-center gap-8 lg:gap-16">
             {/* Left Side - Logo Card */}
-            <img src={wilogo} alt="" className="w-80 h-80 rounded-2xl" />
+            <img src={wilogo} alt="" className="w-80 h-80 rounded-2xl" data-aos="fade-right" data-aos-delay="200" />
             
             {/* Right Side - Description */}
-            <div className="flex md:w-[55%] text-center lg:text-left">
+            <div className="flex md:w-[55%] text-center lg:text-left" data-aos="fade-left" data-aos-delay="300">
               <p className="text-white text-base sm:text-lg leading-relaxed font-serif">
               Webbiez Infotech is a modern IT solutions company specializing in ReactJS websites, UI/UX design, graphic design, mobile application development, and social media management. We help businesses build a strong digital presence through creative design, smart technology, and strategic execution.
               <br /> <br /> In today’s AI-driven world, we focus on delivering secure, scalable, and performance-driven solutions that not only look great but also help brands grow, engage users, and stand out in the digital space.
@@ -163,13 +183,13 @@ const handleSearch = () => {
         </div>
         
         {/* Bottom Line - 60% width from right to left */}
-        <div className="w-[60%] h-2 sm:h-3 bg-white rounded-full mt-8 sm:mt-16 ml-auto"></div>
+        <div className="w-[60%] h-2 sm:h-3 bg-white rounded-full mt-8 sm:mt-16 ml-auto" data-aos="fade-left"></div>
       </section>
 
       {/* Services Section */}
       <section className="pt-8 sm:pt-12 lg:pt-16 pb-16 sm:pb-24 lg:pb-32 xl:pb-40 px-4 sm:px-8 bg-[#1E8975] min-h-screen flex items-start" id='services'>
         <div className="max-w-7xl mx-auto w-full">
-          <h2 className="text-3xl sm:text-4xl lg:text-6xl font-bold text-white text-left mb-8 sm:mb-12 lg:mb-16">Services We Offer</h2>
+          <h2 className="text-3xl sm:text-4xl lg:text-6xl font-bold text-white text-left mb-8 sm:mb-12 lg:mb-16" data-aos="fade-up">Services We Offer</h2>
           
           {/* Services Cards Container */}
           <div className="flex flex-col lg:flex-row gap-8 sm:gap-10 lg:gap-14 xl:gap-18 2xl:gap-24 items-center lg:items-end justify-center">
@@ -240,7 +260,7 @@ const handleSearch = () => {
       <section className=" py-10 px-4 sm:py-16 md:py-20 bg-white rounded-[3rem] sm:rounded-[4rem] md:rounded-[5rem] lg:rounded-[6rem] xl:rounded-[7rem] 2xl:rounded-[8rem] relative z-10 mb-0" id='projects'>
         <div className="max-w-[90%]  mx-auto w-full">
           {/* Section Title and Description */}
-          <div className="text-center mb-10 sm:mb-16 lg:mb-20">
+          <div className="text-center mb-10 sm:mb-16 lg:mb-20" data-aos="fade-up">
             <h2 className="text-3xl sm:text-4xl lg:text-6xl font-bold text-[#07191B] mb-4 sm:mb-6">
               Projects We've <span className="text-[#1E8975]">Worked on</span>
             </h2>
@@ -286,6 +306,8 @@ function ServiceCard({ title, description, icon, isExpanded, backgroundImage, ba
       }`}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
+      data-aos="fade-up"
+      data-aos-delay="100"
     >
       <div className={`${backgroundImage} rounded-[60px] sm:rounded-[70px] lg:rounded-[80px] xl:rounded-[90px] h-full border-2 border-white relative overflow-hidden`}>
         {/* Background Image */}
@@ -362,7 +384,7 @@ function ProjectsSlider() {
       {/* Main Project Display */}
       <div className="flex flex-col-reverse lg:flex-row items-center justify-center gap-8">
           {/* Project Details Card */}
-          <div className="w-full lg:w-1/2 bg-white rounded-2xl sm:rounded-3xl border border-gray-200 p-6 sm:p-8 shadow-lg max-h-[500px] sm:max-h-[600px] overflow-y-auto">
+          <div className="w-full lg:w-1/2 bg-white rounded-2xl sm:rounded-3xl border border-gray-200 p-6 sm:p-8 shadow-lg max-h-[500px] sm:max-h-[600px] overflow-y-auto" data-aos="fade-right" data-aos-delay="200">
             <h3 className="text-2xl sm:text-3xl font-bold text-[#1E8975] mb-5">
               {projects[selectedProject].title}
             </h3>
@@ -391,7 +413,7 @@ function ProjectsSlider() {
           </div>
 
           {/* Project Preview - Image */}
-          <div className="w-full lg:w-1/2">
+          <div className="w-full lg:w-1/2" data-aos="fade-left" data-aos-delay="300">
             <div className="bg-white rounded-2xl sm:rounded-3xl lg:rounded-[2rem] border-2 border-gray-200 shadow-lg overflow-hidden max-h-[500px] sm:max-h-[600px]">
               {projects[selectedProject].type === 'portfolio' ? (
                 <img 
@@ -438,6 +460,8 @@ function ProjectsSlider() {
                   : 'border-2 border-gray-300 hover:border-[#1E8975] hover:scale-105 hover:shadow-lg hover:shadow-[#1E8975]/30'
               }`}
               onClick={() => setSelectedProject(index)}
+              data-aos="zoom-in"
+              data-aos-delay={100 * index}
             >
               <div className="w-40 sm:w-48 h-24 sm:h-32 bg-white rounded-2xl sm:rounded-3xl shadow-md overflow-hidden relative">
                 {/* Hover Overlay */}
@@ -525,7 +549,7 @@ function TestimonialsSection() {
       <div className="max-w-7xl mx-auto">
         <div className="flex flex-col lg:grid lg:grid-cols-2 gap-8 lg:gap-16 items-center">
           {/* Left Side - Title and Main Quote */}
-          <div className="text-center lg:text-left">
+          <div className="text-center lg:text-left" data-aos="fade-right">
             <h2 className="text-3xl sm:text-4xl lg:text-6xl font-bold text-white font-serif mb-6 sm:mb-8">
               What Our Clients Says
             </h2>
@@ -537,7 +561,7 @@ function TestimonialsSection() {
           </div>
 
           {/* Right Side - Testimonial Card */}
-          <div className="flex flex-col justify-center items-center w-full">
+          <div className="flex flex-col justify-center items-center w-full" data-aos="fade-left" data-aos-delay="200">
             <div className="relative w-full flex flex-col items-center">
               {/* Navigation Arrows - Desktop: Side, Mobile: Below */}
               <button
@@ -648,7 +672,7 @@ function FAQsSection() {
     <section className="py-10 sm:py-20 px-4 sm:px-8 bg-white" id='faqs'>
       <div className="max-w-7xl mx-auto">
         {/* Section Title */}
-        <h2 className="text-3xl sm:text-4xl lg:text-6xl font-bold text-[#1E8975] text-center mb-8 sm:mb-16 font-serif">
+        <h2 className="text-3xl sm:text-4xl lg:text-6xl font-bold text-[#1E8975] text-center mb-8 sm:mb-16 font-serif" data-aos="fade-up">
           FAQs
         </h2>
 
@@ -656,7 +680,7 @@ function FAQsSection() {
           {/* Left Side - FAQ Accordion */}
           <div className="space-y-4 w-full lg:w-1/2 lg:flex-shrink-0">
             {faqs.map((faq, index) => (
-              <div key={faq.id} className="bg-teal-50 rounded-lg border border-teal-100 w-full transition-all duration-300">
+              <div key={faq.id} className="bg-teal-50 rounded-lg border border-teal-100 w-full transition-all duration-300" data-aos="fade-right" data-aos-delay={100 * index}>
                 {/* Question */}
                 <button
                   onClick={() => toggleFAQ(faq.id)}
@@ -690,7 +714,7 @@ function FAQsSection() {
           </div>
 
           {/* Right Side - FAQ Illustration */}
-          <div className="flex justify-center items-center w-full lg:w-1/2 lg:flex-shrink-0">
+          <div className="flex justify-center items-center w-full lg:w-1/2 lg:flex-shrink-0" data-aos="fade-left" data-aos-delay="300">
             <div className="relative w-full flex justify-center">
               <img 
                 src={faqImage} 
@@ -840,16 +864,16 @@ function ContactSection() {
   };
 
   return (
-    <section className="py-10 sm:py-20 px-4 sm:px-8 bg-white">
+    <section className="py-10 sm:py-20 px-4 sm:px-8 bg-white" id='contact'>
       <div className="max-w-7xl mx-auto">
         {/* Section Title */}
-        <h2 className="text-3xl sm:text-4xl lg:text-6xl font-bold text-[#1E8975] text-center mb-8 sm:mb-16 font-serif">
+        <h2 className="text-3xl sm:text-4xl lg:text-6xl font-bold text-[#1E8975] text-center mb-8 sm:mb-16 font-serif" data-aos="fade-up">
           Contact Us
         </h2>
 
         <div className="flex flex-col lg:flex-row gap-8 lg:gap-16 items-start">
           {/* Left Side - Contact Form */}
-          <div className="flex-1 w-full">
+          <div className="flex-1 w-full" data-aos="fade-right" data-aos-delay="200">
             <form onSubmit={handleSubmit} className="space-y-4 sm:space-y-6">
               {/* Name and Phone Row */}
               <div className="flex flex-col sm:flex-row gap-4">
@@ -944,7 +968,7 @@ function ContactSection() {
           </div>
 
           {/* Right Side - Contact Information */}
-          <div className="flex-1 w-full">
+          <div className="flex-1 w-full" data-aos="fade-left" data-aos-delay="300">
             <div className="space-y-4 sm:space-y-6">
               {/* Introductory Text */}
               <div className="mb-6 sm:mb-8">
@@ -986,7 +1010,7 @@ function FooterSection() {
       <div className="max-w-[90%] mx-auto px-4 sm:px-8 py-10 sm:py-12 lg:py-16">
         <div className="flex flex-col md:flex-row  gap-10 justify-between items-start  ">
           {/* Company Info Column */}
-            <div className="flex flex-col items-start  md:max-w-[50%] gap-3 sm:gap-4">
+            <div className="flex flex-col items-start  md:max-w-[50%] gap-3 sm:gap-4" data-aos="fade-right">
               {/* Logo */}
               <div className="relative flex-shrink-0">
                 <img src={footerlogo} alt="Webbiez Infotech Logo" className="w-auto h-auto" />
@@ -998,7 +1022,7 @@ function FooterSection() {
 
          <div className="flex flex-wrap justify-between items-start gap-4 md:gap-10 lg:gap-16 xl:gap-20 2xl:gap-24">
            {/* Pages Column */}
-           <div className="  space-y-4 sm:space-y-5 ">
+           <div className="  space-y-4 sm:space-y-5 " data-aos="fade-up" data-aos-delay="200">
             <h4 className="text-lg sm:text-xl lg:text-2xl font-bold text-white font-serif">Pages</h4>
             <ul className="space-y-2 sm:space-y-3">
               <li><a href="#" className="text-white/90 hover:text-white transition duration-300 text-base sm:text-lg lg:text-xl font-serif">Home</a></li>
@@ -1009,7 +1033,7 @@ function FooterSection() {
           </div>
 
           {/* Queries Column */}
-          <div className="flex-1 min-w-[150px] space-y-4 sm:space-y-5">
+          <div className="flex-1 min-w-[150px] space-y-4 sm:space-y-5" data-aos="fade-up" data-aos-delay="300">
             <h4 className="text-lg sm:text-xl lg:text-2xl font-bold text-white font-serif">Queries</h4>
             <ul className="space-y-2 sm:space-y-3">
               <li><a href="#" className="text-white/90 hover:text-white transition duration-300 text-base sm:text-lg lg:text-xl font-serif">Testimonials</a></li>
@@ -1019,7 +1043,7 @@ function FooterSection() {
           </div>
 
           {/* Social Media Column */}
-          <div className="flex-1 min-w-[150px] space-y-4 sm:space-y-5">
+          <div className="flex-1 min-w-[150px] space-y-4 sm:space-y-5" data-aos="fade-up" data-aos-delay="400">
             <h4 className="text-lg sm:text-xl lg:text-2xl font-bold text-white font-serif">Social Media</h4>
             <div className="flex gap-4 sm:gap-5">
               <a href="https://wa.me/918225807724" className="text-white hover:text-white/80 transition duration-300">
@@ -1038,7 +1062,7 @@ function FooterSection() {
         </div>
         
         {/* Copyright Line */}
-        <div className="mt-8 sm:mt-12 lg:mt-16 pt-6 sm:pt-8 border-t border-white/20">
+        <div className="mt-8 sm:mt-12 lg:mt-16 pt-6 sm:pt-8 border-t border-white/20" data-aos="fade-up" data-aos-delay="500">
           <p className="text-white/80 text-sm sm:text-base lg:text-lg font-serif text-center">
             WebbiezInfotech @2025, all rights reserved
           </p>
