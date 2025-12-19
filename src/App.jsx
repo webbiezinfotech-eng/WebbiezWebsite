@@ -189,7 +189,7 @@ const handleSearch = () => {
       {/* Services Section */}
       <section className="pt-8 sm:pt-12 lg:pt-16 pb-16 sm:pb-24 lg:pb-32 xl:pb-40 px-4 sm:px-8 bg-[#1E8975] min-h-screen flex items-start" id='services'>
         <div className="max-w-7xl mx-auto w-full">
-          <h2 className="text-3xl sm:text-4xl lg:text-6xl font-bold text-white text-left mb-8 sm:mb-12 lg:mb-16" data-aos="fade-up">Services We Offer</h2>
+          <h2 className="text-3xl sm:text-4xl lg:text-6xl font-bold text-white text-left mb-8 sm:mb-12 lg:mb-16">Services We Offer</h2>
           
           {/* Services Cards Container */}
           <div className="flex flex-col lg:flex-row gap-8 sm:gap-10 lg:gap-14 xl:gap-18 2xl:gap-24 items-center lg:items-end justify-center">
@@ -299,41 +299,39 @@ function ServiceCard({ title, description, icon, isExpanded, backgroundImage, ba
   
   return (
     <div 
-      className={`relative transition-all duration-500 ease-in-out cursor-pointer overflow-hidden rounded-[60px] sm:rounded-[70px] lg:rounded-[80px] xl:rounded-[90px] ${
+      className={`relative transition-all duration-300 ease-in-out cursor-pointer overflow-hidden rounded-[60px] sm:rounded-[70px] lg:rounded-[80px] xl:rounded-[90px] ${
         isExpanded || isHovered 
           ? 'w-full sm:w-[28rem] lg:w-[36rem] xl:w-[40rem] h-96 sm:h-[28rem] lg:h-[32rem]' 
           : 'w-28 sm:w-32 lg:w-36 h-80 sm:h-[450px] lg:h-[500px]'
       }`}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
-      data-aos="fade-up"
-      data-aos-delay="100"
     >
-      <div className={`${backgroundImage} rounded-[60px] sm:rounded-[70px] lg:rounded-[80px] xl:rounded-[90px] h-full border-2 border-white relative overflow-hidden`}>
+      <div className={`${backgroundImage} rounded-[60px] sm:rounded-[70px] lg:rounded-[80px] xl:rounded-[90px] h-full border-2 border-white relative overflow-hidden transition-all duration-300`}>
         {/* Background Image */}
         {backgroundImageSrc && (
-          <div className="absolute inset-0 z-0">
+          <div className="absolute inset-0 z-0 transition-opacity duration-300">
             <img 
               src={backgroundImageSrc} 
               alt={title}
-              className="w-full h-full object-cover"
+              className="w-full h-full object-cover transition-transform duration-300 hover:scale-105"
             />
         </div>
         )}
         
         {/* Content */}
-        <div className="relative z-10 h-full flex flex-col justify-between p-6 sm:p-8 lg:p-10">
+        <div className="relative z-10 h-full flex flex-col justify-between p-6 sm:p-8 lg:p-10 transition-opacity duration-300">
           {isExpanded || isHovered ? (
             // Expanded State
-            <div className={`${textColor}  flex flex-col justify-center space-y-6 sm:space-y-8`}>
-              <div className="text-4xl sm:text-5xl lg:text-6xl">{icon}</div>
-              <h3 className="text-3xl font-bold">{title}</h3>
-              <p className="text-lg sm:text-xl lg:text-2xl leading-relaxed">{description}</p>
+            <div className={`${textColor} flex flex-col justify-center space-y-6 sm:space-y-8 animate-in fade-in duration-300`}>
+              <div className="text-4xl sm:text-5xl lg:text-6xl transition-transform duration-300">{icon}</div>
+              <h3 className="text-3xl font-bold transition-all duration-300">{title}</h3>
+              <p className="text-lg sm:text-xl lg:text-2xl leading-relaxed transition-all duration-300">{description}</p>
             </div>
           ) : (
             // Collapsed State
-            <div className={`${textColor} h-full flex items-center justify-center`}>
-              <div className="transform -rotate-90">
+            <div className={`${textColor} h-full flex items-center justify-center transition-all duration-300`}>
+              <div className="transform -rotate-90 transition-transform duration-300">
                 <span className="text-sm sm:text-lg font-bold whitespace-nowrap">{title}</span>
               </div>
             </div>
@@ -347,6 +345,7 @@ function ServiceCard({ title, description, icon, isExpanded, backgroundImage, ba
 // Projects Slider Component
 function ProjectsSlider() {
   const [selectedProject, setSelectedProject] = useState(0);
+  const [isTransitioning, setIsTransitioning] = useState(false);
 
   const projects = [
     {
@@ -379,21 +378,30 @@ function ProjectsSlider() {
     }
   ];
 
+  const handleProjectChange = (index) => {
+    if (index === selectedProject) return;
+    setIsTransitioning(true);
+    setTimeout(() => {
+      setSelectedProject(index);
+      setIsTransitioning(false);
+    }, 150);
+  };
+
   return (
     <div className="space-y-8">
       {/* Main Project Display */}
       <div className="flex flex-col-reverse lg:flex-row items-center justify-center gap-8">
           {/* Project Details Card */}
-          <div className="w-full lg:w-1/2 bg-white rounded-2xl sm:rounded-3xl border border-gray-200 p-6 sm:p-8 shadow-lg max-h-[500px] sm:max-h-[600px] overflow-y-auto" data-aos="fade-right" data-aos-delay="200">
-            <h3 className="text-2xl sm:text-3xl font-bold text-[#1E8975] mb-5">
+          <div className={`w-full lg:w-1/2 bg-white rounded-2xl sm:rounded-3xl border border-gray-200 p-6 sm:p-8 shadow-lg max-h-[500px] sm:max-h-[600px] overflow-y-auto transition-opacity duration-300 ${isTransitioning ? 'opacity-0' : 'opacity-100'}`}>
+            <h3 className="text-2xl sm:text-3xl font-bold text-[#1E8975] mb-5 transition-all duration-300">
               {projects[selectedProject].title}
             </h3>
-            <p className="text-[#07191B] mb-6 leading-relaxed text-lg ">
+            <p className="text-[#07191B] mb-6 leading-relaxed text-lg transition-all duration-300">
               {projects[selectedProject].description}
             </p>
             <div className="mb-7">
               <h4 className="text-lg sm:text-xl font-bold text-[#1E8975] mb-3">Technologies Used:-</h4>
-              <p className="text-[#07191B] text-lg">
+              <p className="text-[#07191B] text-lg transition-all duration-300">
                 {projects[selectedProject].type === 'wholesale' && "React.js, PHP, Admin Panel & Backend Integration"}
                 {projects[selectedProject].type === 'portfolio' && "Next.js, PHP, Backend & Full Stack Development"}
                 {projects[selectedProject].type === 'financial' && "React.js, PHP, Animations & Graphics"}
@@ -413,31 +421,31 @@ function ProjectsSlider() {
           </div>
 
           {/* Project Preview - Image */}
-          <div className="w-full lg:w-1/2" data-aos="fade-left" data-aos-delay="300">
-            <div className="bg-white rounded-2xl sm:rounded-3xl lg:rounded-[2rem] border-2 border-gray-200 shadow-lg overflow-hidden max-h-[500px] sm:max-h-[600px]">
+          <div className="w-full lg:w-1/2">
+            <div className={`bg-white rounded-2xl sm:rounded-3xl lg:rounded-[2rem] border-2 border-gray-200 shadow-lg overflow-hidden max-h-[500px] sm:max-h-[600px] transition-opacity duration-300 ${isTransitioning ? 'opacity-0' : 'opacity-100'}`}>
               {projects[selectedProject].type === 'portfolio' ? (
                 <img 
                   src={uiuxImage} 
                   alt={projects[selectedProject].title}
-                  className="w-full h-full max-h-[500px] sm:max-h-[600px] object-cover rounded-2xl sm:rounded-3xl lg:rounded-[2rem]"
+                  className="w-full h-full max-h-[500px] sm:max-h-[600px] object-cover rounded-2xl sm:rounded-3xl lg:rounded-[2rem] transition-opacity duration-300"
                 />
               ) : projects[selectedProject].type === 'financial' ? (
                 <img 
                   src={financialImage} 
                   alt={projects[selectedProject].title}
-                  className="w-full h-full max-h-[500px] sm:max-h-[600px] object-cover rounded-2xl sm:rounded-3xl lg:rounded-[2rem]"
+                  className="w-full h-full max-h-[500px] sm:max-h-[600px] object-cover rounded-2xl sm:rounded-3xl lg:rounded-[2rem] transition-opacity duration-300"
                 />
               ) : projects[selectedProject].type === 'job' ? (
                 <img 
                   src={jobImage} 
                   alt={projects[selectedProject].title}
-                  className="w-full h-full max-h-[500px] sm:max-h-[600px] object-cover rounded-2xl sm:rounded-3xl lg:rounded-[2rem]"
+                  className="w-full h-full max-h-[500px] sm:max-h-[600px] object-cover rounded-2xl sm:rounded-3xl lg:rounded-[2rem] transition-opacity duration-300"
                 />
               ) : projects[selectedProject].type === 'wholesale' ? (
                 <img 
                   src={wholesaleImage} 
                   alt={projects[selectedProject].title}
-                  className="w-full h-full max-h-[500px] sm:max-h-[600px] object-cover rounded-2xl sm:rounded-3xl lg:rounded-[2rem]"
+                  className="w-full h-full max-h-[500px] sm:max-h-[600px] object-cover rounded-2xl sm:rounded-3xl lg:rounded-[2rem] transition-opacity duration-300"
                 />
               ) : (
                 <div className="h-64 sm:h-96 bg-gradient-to-br from-[#07191B] via-teal-900 to-[#07191B] relative rounded-2xl sm:rounded-3xl lg:rounded-[2rem] flex items-center justify-center">
@@ -454,20 +462,14 @@ function ProjectsSlider() {
           {projects.map((project, index) => (
             <div
               key={project.id}
-              className={`cursor-pointer transition-all duration-300 rounded-2xl sm:rounded-3xl overflow-hidden relative group ${
+              className={`cursor-pointer rounded-2xl sm:rounded-3xl overflow-hidden relative transition-all duration-300 ${
                 selectedProject === index 
-                  ? 'transform scale-110 border-4 border-[#1E8975] shadow-xl shadow-[#1E8975]/50' 
-                  : 'border-2 border-gray-300 hover:border-[#1E8975] hover:scale-105 hover:shadow-lg hover:shadow-[#1E8975]/30'
+                  ? 'border-4 border-[#1E8975] shadow-xl shadow-[#1E8975]/50 scale-105' 
+                  : 'border-2 border-gray-300 hover:border-[#1E8975] hover:shadow-lg hover:shadow-[#1E8975]/30 hover:scale-105'
               }`}
-              onClick={() => setSelectedProject(index)}
-              data-aos="zoom-in"
-              data-aos-delay={100 * index}
+              onClick={() => handleProjectChange(index)}
             >
               <div className="w-40 sm:w-48 h-24 sm:h-32 bg-white rounded-2xl sm:rounded-3xl shadow-md overflow-hidden relative">
-                {/* Hover Overlay */}
-                {selectedProject !== index && (
-                  <div className="absolute inset-0 bg-[#1E8975]/0 group-hover:bg-[#1E8975]/10 transition-all duration-300 rounded-2xl sm:rounded-3xl z-10"></div>
-                )}
                 {project.type === 'wholesale' ? (
                   <img 
                     src={wholesaleImage} 
@@ -511,6 +513,7 @@ function ProjectsSlider() {
 // Testimonials Section Component
 function TestimonialsSection() {
   const [currentTestimonial, setCurrentTestimonial] = useState(0);
+  const [isTransitioning, setIsTransitioning] = useState(false);
 
   const testimonials = [
     {
@@ -537,11 +540,19 @@ function TestimonialsSection() {
   ];
 
   const nextTestimonial = () => {
-    setCurrentTestimonial((prev) => (prev + 1) % testimonials.length);
+    setIsTransitioning(true);
+    setTimeout(() => {
+      setCurrentTestimonial((prev) => (prev + 1) % testimonials.length);
+      setIsTransitioning(false);
+    }, 150);
   };
 
   const prevTestimonial = () => {
-    setCurrentTestimonial((prev) => (prev - 1 + testimonials.length) % testimonials.length);
+    setIsTransitioning(true);
+    setTimeout(() => {
+      setCurrentTestimonial((prev) => (prev - 1 + testimonials.length) % testimonials.length);
+      setIsTransitioning(false);
+    }, 150);
   };
 
   return (
@@ -579,9 +590,9 @@ function TestimonialsSection() {
               </button>
 
               {/* Testimonial Card */}
-              <div className="bg-white rounded-3xl sm:rounded-[2rem] lg:rounded-[2.5rem] p-6 sm:p-8 lg:p-10 shadow-xl max-w-md w-full">
-                <div className="text-5xl sm:text-6xl lg:text-7xl text-[#1E8975] mb-4 font-serif">"</div>
-                <p className="text-[#07191B] text-base sm:text-lg leading-relaxed mb-6 sm:mb-8">
+              <div className={`bg-white rounded-3xl sm:rounded-[2rem] lg:rounded-[2.5rem] p-6 sm:p-8 lg:p-10 shadow-xl max-w-md w-full transition-opacity duration-300 ${isTransitioning ? 'opacity-0' : 'opacity-100'}`}>
+                <div className="text-5xl sm:text-6xl lg:text-7xl text-[#1E8975] mb-4 font-serif transition-all duration-300">"</div>
+                <p className="text-[#07191B] text-base sm:text-lg leading-relaxed mb-6 sm:mb-8 transition-all duration-300">
                   {testimonials[currentTestimonial].quote}
                 </p>
                 <div className="border-t border-gray-200 pt-5 sm:pt-6">
@@ -589,13 +600,13 @@ function TestimonialsSection() {
                     <img
                       src={testimonials[currentTestimonial].avatar}
                       alt={testimonials[currentTestimonial].author}
-                      className="w-12 h-12 sm:w-14 sm:h-14 rounded-full object-cover border-2 border-gray-200"
+                      className="w-12 h-12 sm:w-14 sm:h-14 rounded-full object-cover border-2 border-gray-200 transition-all duration-300"
                     />
                     <div>
-                      <h4 className="font-bold text-[#07191B] text-base sm:text-lg mb-1">
+                      <h4 className="font-bold text-[#07191B] text-base sm:text-lg mb-1 transition-all duration-300">
                         {testimonials[currentTestimonial].author}
                       </h4>
-                      <p className="text-gray-600 text-sm sm:text-base">
+                      <p className="text-gray-600 text-sm sm:text-base transition-all duration-300">
                         {testimonials[currentTestimonial].role}
                       </p>
                     </div>
@@ -629,8 +640,6 @@ function TestimonialsSection() {
 
 // FAQs Section Component
 function FAQsSection() {
-  const [expandedFAQ, setExpandedFAQ] = useState(0);
-
   const faqs = [
     {
       id: 0,
@@ -664,10 +673,6 @@ function FAQsSection() {
     }
   ];
 
-  const toggleFAQ = (id) => {
-    setExpandedFAQ(expandedFAQ === id ? null : id);
-  };
-
   return (
     <section className="py-10 sm:py-20 px-4 sm:px-8 bg-white" id='faqs'>
       <div className="max-w-7xl mx-auto">
@@ -680,27 +685,29 @@ function FAQsSection() {
           {/* Left Side - FAQ Accordion */}
           <div className="space-y-4 w-full lg:w-1/2 lg:flex-shrink-0">
             {faqs.map((faq, index) => (
-              <div key={faq.id} className="bg-teal-50 rounded-lg border border-teal-100 w-full transition-all duration-300" data-aos="fade-right" data-aos-delay={100 * index}>
+              <div 
+                key={faq.id} 
+                className="group bg-teal-50 rounded-lg border border-teal-100 w-full transition-all duration-300 hover:shadow-lg hover:shadow-teal-200/50 hover:border-[#1E8975] hover:scale-[1.02]" 
+                data-aos="fade-right" 
+                data-aos-delay={100 * index}
+              >
                 {/* Question */}
-                <button
-                  onClick={() => toggleFAQ(faq.id)}
-                  className="w-full p-4 sm:p-6 text-left flex justify-between items-center hover:bg-teal-100 transition-all duration-300"
-                >
+                <div className="w-full p-4 sm:p-6 text-left flex justify-between items-center transition-all duration-300 group-hover:bg-teal-100">
                   <div className="flex items-center gap-2 sm:gap-4 flex-1 min-w-0">
                     <span className="text-[#1E8975] font-bold text-sm sm:text-lg flex-shrink-0">
                       Que{index + 1}.
                     </span>
-                    <span className="text-[#07191B] font-medium text-sm sm:text-lg break-words">
+                    <span className="text-[#07191B] font-medium text-sm sm:text-lg break-words group-hover:text-[#1E8975] transition-colors duration-300">
                       {faq.question}
                     </span>
                   </div>
-                  <div className={`text-[#1E8975] text-xl sm:text-2xl font-bold flex-shrink-0 ml-2 transition-transform duration-300 ${expandedFAQ === faq.id ? 'rotate-180' : ''}`}>
-                    {expandedFAQ === faq.id ? '−' : '+'}
+                  <div className="text-[#1E8975] text-xl sm:text-2xl font-bold flex-shrink-0 ml-2 transition-transform duration-300 group-hover:rotate-90">
+                    +
                   </div>
-                </button>
+                </div>
 
-                {/* Answer */}
-                <div className={`overflow-hidden transition-all duration-300 ease-in-out ${expandedFAQ === faq.id ? 'max-h-[500px] opacity-100' : 'max-h-0 opacity-0'}`}>
+                {/* Answer - Show on Hover */}
+                <div className="overflow-hidden transition-all duration-300 ease-in-out max-h-0 opacity-0 group-hover:max-h-[500px] group-hover:opacity-100">
                   <div className="px-4 sm:px-6 pb-4 sm:pb-6 w-full">
                     <div className="bg-teal-50 rounded-lg p-3 sm:p-4 border border-teal-100 w-full">
                       <p className="text-[#07191B] leading-relaxed text-sm sm:text-base break-words">
