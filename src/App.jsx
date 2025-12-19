@@ -7,12 +7,12 @@ import financialImage from './assets/images/Screenshot 2025-12-15 at 16.07.58.pn
 import jobImage from './assets/images/Screenshot 2025-12-15 at 16.09.44.png'
 import wholesaleImage from './assets/images/Screenshot 2025-12-15 at 16.10.47.png'
 import faqImage from './assets/images/Untitled design (42) 1.png'
-import heroImage from './assets/images/Group 1321316220.png'
+import heroImage from './assets/images/logo.png'
 import webDevImage from './assets/images/Rectangle 34625783.png'
 import uiuxServiceImage from './assets/images/Rectangle 34625783-1.png'
 import seoImage from './assets/images/Rectangle 34625783-2.png'
 import brandingImage from './assets/images/Rectangle 34625783-3.png'
-import ecommerceImage from './assets/images/Rectangle 34625783-4.png'
+import ecommerceImage from './assets/images/Rectangle 34625783.png'
 import prImage from './assets/images/Rectangle 34625783-5.png'
 import wilogo from './assets/wilogo.jpg'
 import footerlogo from './assets/logo.png'
@@ -91,7 +91,7 @@ const handleSearch = () => {
           <FaEnvelope className="w-12 h-12 sm:w-12 sm:h-12 lg:w-12 lg:h-12" />
         </a>
         <a 
-          href="#" 
+          href="https://www.instagram.com/webbiez_infotech?igsh=MXRldGZmNmxqdWQyZQ==" 
           target="_blank" 
           rel="noopener noreferrer"
           className=" w-16 h-16 lg:w-20 lg:h-20 rounded-full flex items-center justify-center text-white cursor-pointer transition-all duration-300 hover:scale-110 hover:bg-gradient-to-r hover:from-[#833AB4] hover:via-[#FD1D1D] hover:to-[#FCB045] hover:shadow-lg hover:shadow-[#833AB4]/50"
@@ -1049,7 +1049,7 @@ function FooterSection() {
               <a href="https://wa.me/918225807724" className="text-white hover:text-white/80 transition duration-300">
                 <FaWhatsapp className="text-3xl sm:text-4xl lg:text-5xl" />
               </a>
-              <a href="https://www.instagram.com/webbiez_infotech/" className="text-white hover:text-white/80 transition duration-300">
+              <a href="https://www.instagram.com/webbiez_infotech?igsh=MXRldGZmNmxqdWQyZQ==" className="text-white hover:text-white/80 transition duration-300">
                 <FaInstagram className="text-3xl sm:text-4xl lg:text-5xl" />
               </a>
               <a href="https://www.linkedin.com/company/webbiez-infotech/about/?viewAsMember=true" className="text-white hover:text-white/80 transition duration-300">
