@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Webbiez — responsive preview</title>
+<style>
+  :root{color-scheme:dark}
+  *{box-sizing:border-box}
+  body{margin:0;background:#050f10;color:#dceFeb;font:14px/1.4 system-ui,sans-serif}
+  header{position:sticky;top:0;z-index:5;display:flex;flex-wrap:wrap;gap:10px;align-items:center;padding:12px 16px;background:#07191B;border-bottom:1px solid #ffffff14}
+  header strong{font-size:15px;margin-right:6px}
+  input{flex:1;min-width:200px;max-width:340px;padding:8px 10px;border-radius:8px;border:1px solid #ffffff22;background:#0b2724;color:#fff}
+  button{padding:8px 12px;border-radius:999px;border:1px solid #2dd4bf55;background:#1e897533;color:#cffafe;cursor:pointer}
+  button.on{background:#2dd4bf;color:#07191b;font-weight:700}
+  .hint{width:100%;font-size:12px;color:#99f6e4aa}
+  .hint code{background:#ffffff14;padding:1px 6px;border-radius:5px}
+  main{display:flex;gap:28px;align-items:flex-start;padding:24px 16px 48px;overflow-x:auto}
+  figure{margin:0;flex:none}
+  figcaption{margin-bottom:8px;font-size:12px;color:#99f6e4cc}
+  iframe{display:block;border:1px solid #ffffff22;border-radius:14px;background:#07191B}
+  .single main{justify-content:center}
+</style>
+</head>
+<body>
+<header>
+  <strong>Responsive preview</strong>
+  <input id="url" value="http://localhost:4173/" aria-label="Site URL">
+  <button data-m="all" class="on">All sizes</button>
+  <button data-m="320">320</button>
+  <button data-m="360">360</button>
+  <button data-m="390">390</button>
+  <button data-m="768">768</button>
+  <button data-m="1280">1280</button>
+  <button id="reload">Reload</button>
+  <div class="hint">Run <code>npm install</code> then <code>npm run build</code> then <code>npm run preview</code> in the project folder, then open this file. (Or use <code>npm run dev</code> and change the URL to <code>http://localhost:5173/</code>.)</div>
+</header>
+<main id="stage"></main>
+<script>
+  const sizes = {all:[[360,720],[768,900],[1280,800]], 320:[[320,640]], 360:[[360,720]], 390:[[390,780]], 768:[[768,1000]], 1280:[[1280,800]]};
+  const stage = document.getElementById('stage'), url = document.getElementById('url');
+  let mode = 'all';
+  function render(){
+    stage.innerHTML = '';
+    document.body.classList.toggle('single', mode !== 'all');
+    sizes[mode].forEach(([w,h]) => {
+      const f = document.createElement('figure');
+      const c = document.createElement('figcaption'); c.textContent = w + ' × ' + h;
+      const i = document.createElement('iframe'); i.src = url.value; i.width = w; i.height = h; i.title = 'Preview ' + w + 'px';
+      f.append(c, i); stage.append(f);
+    });
+  }
+  document.querySelectorAll('button[data-m]').forEach(b => b.onclick = () => {
+    document.querySelectorAll('button[data-m]').forEach(x => x.classList.remove('on'));
+    b.classList.add('on'); mode = b.dataset.m; render();
+  });
+  document.getElementById('reload').onclick = render;
+  url.addEventListener('change', render);
+  render();
+</script>
+</body>
+</html>

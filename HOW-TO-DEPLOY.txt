@@ -1,0 +1,19 @@
+WEBBIEZ INFOTECH - HOW TO USE THIS ZIP
+
+JUST UPLOAD (no changes):
+  Upload everything INSIDE the "dist" folder to your server's public_html
+  (index.html, assets folder, etc.).
+
+MAKE CHANGES FIRST:
+  1. Unzip, open the folder in VS Code.
+  2. npm install            (first time only)
+  3. npm run dev            (live preview, http://localhost:5173)
+  4. Edit files in /src     (text/content: src/data/site.js and src/data/products.js)
+  5. npm run build          (creates a fresh "dist" folder)
+  6. Upload everything inside "dist" to public_html.
+
+NOTES
+  - Form emails use the key in the ".env" file (VITE_WEB3FORMS_KEY). Keep ".env" in the project
+    root when you run "npm run build". After editing ".env", restart "npm run dev".
+  - The same key works on localhost and on webbiezinfotech.in.
+  - WhatsApp number: src/data/site.js -> contact.whatsapp
