@@ -1,5 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 export default {
+<<<<<<< HEAD
   content: ['./index.html', './src/**/*.{js,jsx}'],
   theme: {
     extend: {
@@ -58,4 +59,19 @@ export default {
     }
   },
   plugins: []
+=======
+  content: [
+    "./index.html",
+    "./src/**/*.{js,ts,jsx,tsx}",
+  ],
+  theme: {
+    extend: {
+      fontFamily: {
+        sans: ['Inknut Antiqua', 'serif'],
+        serif: ['Inknut Antiqua', 'serif'],
+      },
+    },
+  },
+  plugins: [],
+>>>>>>> origin/main
 }

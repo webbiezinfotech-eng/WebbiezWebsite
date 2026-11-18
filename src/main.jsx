@@ -1,5 +1,6 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
+<<<<<<< HEAD
 import { HashRouter } from 'react-router-dom'
 import App from './App.jsx'
 import './index.css'
@@ -13,4 +14,13 @@ ReactDOM.createRoot(document.getElementById('root')).render(
       <App />
     </HashRouter>
   </React.StrictMode>
+=======
+import App from './App.jsx'
+import './index.css'  // ✅ must include Tailwind CSS here
+
+ReactDOM.createRoot(document.getElementById('root')).render(
+  <React.StrictMode>
+    <App />
+  </React.StrictMode>,
+>>>>>>> origin/main
 )
